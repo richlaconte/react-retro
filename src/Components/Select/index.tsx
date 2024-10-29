@@ -47,7 +47,7 @@ const Select: React.FC<SelectProps> = ({
   }, []);
 
   // Close dropdown when focus leaves the select component
-  const handleBlur = (event: React.FocusEvent<HTMLDivElement>) => {
+  const handleBlur = (_event: React.FocusEvent<HTMLDivElement>) => {
     // Delay to allow focus event to propagate
     setTimeout(() => {
       if (selectRef.current && !selectRef.current.contains(document.activeElement)) {

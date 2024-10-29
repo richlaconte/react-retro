@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import Button from '../../Components/Button';
 import List from '../../Components/List';
 import ListItem from '../../Components/ListItem';
@@ -7,30 +6,6 @@ import { Outlet, useNavigate, Link } from 'react-router-dom';
 
 const index = () => {
   const navigate = useNavigate();
-  const [isModalOpen, setModalOpen] = useState(false);
-  
-  const closeModal = () => setModalOpen(false);
-
-  const [standardText, setStandardText] = useState('');
-  const [containedText, setContainedText] = useState('');
-  const [standardMultiText, setStandardMultiText] = useState('');
-  const [containedMultiText, setContainedMultiText] = useState('');
-
-  const [selectedOption, setSelectedOption] = useState('');
-
-  const [showAlert, setShowAlert] = useState(true);
-
-  const handleClose = () => {
-    setShowAlert(false);
-  };
-
-  const handleClick = (action: string) => {
-    alert(`IconButton clicked: ${action}`);
-  };
-
-  const handleItemClick = (item: string) => {
-    alert(`Clicked on ${item}`);
-  };
 
   const sidebarContent = (
     <List>
@@ -73,17 +48,6 @@ const index = () => {
   );
 
   const logo = <img src="logo.png" alt="Logo" />;
-
-  const modalFooter = (
-    <>
-      <Button variant='secondary' onClick={closeModal}>
-        Cancel
-      </Button>
-      <Button variant='primary' onClick={closeModal}>
-        Confirm
-      </Button>
-    </>
-  );
 
   return (
     <Dashboard

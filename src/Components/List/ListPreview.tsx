@@ -1,4 +1,3 @@
-import React from 'react'
 import { FaCheckCircle, FaTimesCircle, FaInfoCircle, FaExclamationCircle } from 'react-icons/fa'
 import List from '.'
 import ListItem from '../ListItem'

@@ -1,4 +1,3 @@
-import React from 'react'
 import { FaBell, FaEnvelope } from 'react-icons/fa';
 import Badge from '.';
 

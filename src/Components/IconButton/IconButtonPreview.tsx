@@ -1,4 +1,3 @@
-import React from 'react'
 import { FaPlay, FaPause, FaInfoCircle, FaExclamationTriangle, FaTrash } from 'react-icons/fa'
 import IconButton from '.'
 

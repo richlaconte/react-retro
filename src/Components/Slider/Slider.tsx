@@ -10,7 +10,6 @@ interface SliderProps {
   disabled?: boolean;
   variant?: 'primary' | 'secondary' | 'success' | 'warning' | 'error';
   size?: 'small' | 'medium' | 'large';
-  marks?: boolean | { value: number; label?: string }[];
   valueLabelDisplay?: 'on' | 'auto' | 'off';
 }
 
@@ -23,12 +22,11 @@ const Slider: React.FC<SliderProps> = ({
   disabled = false,
   variant = 'primary',
   size = 'medium',
-  marks = false,
   valueLabelDisplay = 'off',
 }) => {
   const [sliderValue, setSliderValue] = useState(value);
   const trackRef = useRef<HTMLDivElement>(null);
-  const [trackWidth, setTrackWidth] = useState(0);
+  const [_trackWidth, setTrackWidth] = useState(0);
 
   useEffect(() => {
     if (trackRef.current) {

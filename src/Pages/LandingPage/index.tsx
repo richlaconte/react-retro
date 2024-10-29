@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LandingPage.css';
-import { FaGithub, FaArrowRight, FaInfo, FaInfoCircle, FaPlay, FaArrowLeft, FaPause } from 'react-icons/fa';
+import { FaGithub, FaArrowRight, FaPlay, FaArrowLeft, FaPause } from 'react-icons/fa';
 import Accordion from '../../Components/Accordion';
 import AccordionItem from '../../Components/AccordionItem';
 import Button from '../../Components/Button';
-import Chip from '../../Components/Chip';
 import Progress from '../../Components/Progress';
 import Skeleton from '../../Components/Skeleton';
-import ToggleButton from '../../Components/ToggleButton';
 
 import reactRetroLogo from '../../assets/reactRetroLogo.png';
 import Alert from '../../Components/Alert';

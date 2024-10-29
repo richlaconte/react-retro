@@ -5,13 +5,13 @@ import ToggleButton from '.';
 const ToggleButtonPreview = () => {
   const [selected, setSelected] = useState(false);
 
-  const handleToggle = (event: React.MouseEvent<HTMLElement>, value: string) => {
+  const handleToggle = (_event: React.MouseEvent<HTMLElement>, _value: string) => {
     setSelected(!selected);
   };
 
   const [alignment, setAlignment] = useState('left');
 
-  const handleAlignment = (event: React.MouseEvent<HTMLElement>, value: string) => {
+  const handleAlignment = (_event: React.MouseEvent<HTMLElement>, value: string) => {
     setAlignment(value);
   };
 

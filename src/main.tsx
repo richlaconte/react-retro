@@ -3,14 +3,10 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import {
   createBrowserRouter,
-  createRoutesFromElements,
-  Route,
   RouterProvider,
 } from "react-router-dom"
 
 import DesignSystem from './Pages/DesignSystem/index.tsx'
-import Home from './Pages/Home/index.tsx'
-import HomePage from './Pages/Home/HomePage.tsx'
 import AlertPreview from './Components/Alert/AlertPreview.tsx'
 import All from './Pages/DesignSystem/All.tsx'
 import ButtonPreview from './Components/Button/ButtonPreview.tsx'
