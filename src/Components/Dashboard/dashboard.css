@@ -1,0 +1,26 @@
+/* Dashboard Container */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Dashboard Content */
+.dashboard-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Main Content Area */
+.dashboard-main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background-color: #F9F9F9; /* Light Grey Background */
+}
+
+/* Adjust Sidebar */
+.dashboard-content .sidebar {
+  flex-shrink: 0;
+}

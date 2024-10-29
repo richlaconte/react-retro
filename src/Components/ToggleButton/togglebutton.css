@@ -1,0 +1,133 @@
+/* Base Styles */
+.toggle-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333333;
+  background-color: #FFFFFF;
+  border: 2px solid #333333;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.toggle-button span {
+  margin: 0;
+}
+
+.toggle-button.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.toggle-button:focus {
+  outline: none;
+}
+
+.toggle-button-icon {
+  margin-right: 6px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+/* Sizes */
+.toggle-button.small {
+  font-size: 14px;
+  padding: 6px 10px;
+}
+
+.toggle-button.large {
+  font-size: 18px;
+  padding: 10px 14px;
+}
+
+/* Variants */
+.toggle-button.primary {
+  background-color: #A2D8FF; /* Light Blue */
+}
+
+.toggle-button.secondary {
+  background-color: #ECECEC; /* Cool Grey */
+}
+
+.toggle-button.success {
+  background-color: #98D19F; /* Pastel Green */
+}
+
+.toggle-button.warning {
+  background-color: #FFD966; /* Warm Yellow */
+}
+
+.toggle-button.error {
+  background-color: #D9534F; /* Muted Red */
+  color: #FFFFFF;
+}
+
+/* Selected State */
+.toggle-button.selected {
+  background-color: #333333;
+  color: #FFFFFF;
+  box-shadow: inset 2px 2px 0 #000000;
+}
+
+/* Selected Variants */
+.toggle-button.primary.selected {
+  background-color: #007BFF;
+}
+
+.toggle-button.secondary.selected {
+  background-color: #666666;
+}
+
+.toggle-button.success.selected {
+  background-color: #28A745;
+}
+
+.toggle-button.warning.selected {
+  background-color: #FFC107;
+  color: #333333;
+}
+
+.toggle-button.error.selected {
+  background-color: #C82333;
+}
+
+/* Hover Effects */
+.toggle-button:hover:not(.disabled):not(.selected) {
+  background-color: #F0F0F0;
+}
+
+.toggle-button.selected:hover:not(.disabled) {
+  opacity: 0.9;
+}
+
+/* Toggle Button Group */
+.toggle-button-group {
+  display: inline-flex;
+}
+
+.toggle-button-group .toggle-button {
+  border-radius: 0;
+}
+
+.toggle-button-group .toggle-button {
+  border-left: 1px solid #333333;
+  border-right: 1px solid #333333;
+}
+
+.toggle-button-group .toggle-button:first-child {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-left: 2px solid #333333;
+}
+
+.toggle-button-group .toggle-button:last-child {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-right: 2px solid #333333;
+}

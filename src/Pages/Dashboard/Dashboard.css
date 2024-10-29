@@ -1,0 +1,165 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  background-color: #F5F5F5;
+  color: #333333;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: #A2D8FF;
+  padding: 10px 20px;
+  border-bottom: 2px solid #333333;
+  box-shadow: 0 4px 0 #333333;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333333;
+  margin-right: 20px;
+}
+
+.app-title {
+  flex-grow: 1;
+  font-size: 24px;
+  margin: 0;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333333;
+  margin-left: 20px;
+  position: relative;
+}
+
+.icon-button:focus {
+  outline: none;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Profile Section */
+.profile-section {
+  background-color: #FFFFFF;
+  padding: 20px;
+  border: 2px solid #333333;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 #333333;
+  margin-bottom: 20px;
+}
+
+.profile-info {
+  display: flex;
+}
+
+.avatar {
+  position: relative;
+}
+
+.avatar svg {
+  width: 64px;
+  height: 64px;
+  color: #333333;
+}
+
+.profile-details {
+  margin-left: 20px;
+}
+
+.interests {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* Settings Section */
+.settings-section {
+  background-color: #FFFFFF;
+  padding: 20px;
+  border: 2px solid #333333;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 #333333;
+  margin-bottom: 20px;
+}
+
+.settings-item {
+  margin-bottom: 20px;
+}
+
+/* Notifications Section */
+.notifications-section {
+  background-color: #FFFFFF;
+  padding: 20px;
+  border: 2px solid #333333;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 #333333;
+  margin-bottom: 20px;
+}
+
+/* Loading Section */
+.loading-section {
+  background-color: #FFFFFF;
+  padding: 20px;
+  border: 2px solid #333333;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 #333333;
+  margin-bottom: 20px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #ECECEC;
+  border-top: 2px solid #333333;
+  box-shadow: 0 -4px 0 #333333;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* Notifications Popover */
+.notifications {
+  width: 200px;
+}
+
+.notifications h3 {
+  margin-top: 0;
+}
+
+.notifications ul {
+  list-style: none;
+  padding: 0;
+}
+
+.notifications li {
+  padding: 8px 0;
+  border-bottom: 1px solid #ECECEC;
+}
+
+.notifications li:last-child {
+  border-bottom: none;
+}

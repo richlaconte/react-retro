@@ -1,0 +1,37 @@
+/* Card Component Styling */
+.card {
+  background-color: #ECECEC; /* Cool Grey/Beige */
+  border: 2px solid #333333; /* Dark Grey */
+  border-radius: 12px; /* Rounded corners for a playful look */
+  box-shadow: 4px 4px 0 #333333; /* Sharp shadow for retro effect */
+  padding: 20px;
+  position: relative;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Hover Effect */
+.card:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 6px 6px 0 #333333;
+}
+
+/* Card Header */
+.card-header {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333333; /* Dark Grey */
+  margin-bottom: 15px;
+}
+
+/* Card Content */
+.card-content {
+  font-size: 16px;
+  color: #4B4B4B; /* Dark Grey/Black */
+  line-height: 1.5;
+}
+
+/* Card Footer */
+.card-footer {
+  margin-top: 20px;
+  text-align: right;
+}

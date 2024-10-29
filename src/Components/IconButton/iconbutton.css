@@ -1,0 +1,171 @@
+/* General IconButton Styling */
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 2px solid #333333; /* Dark Grey */
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  margin: 5px;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  border-radius: 50%; /* Circular button */
+  box-shadow: 2px 2px 0 #333333;
+}
+
+.icon-button.square {
+  border-radius: 8px; /* Square button */
+}
+
+.icon-button.size-small {
+  padding: 5px;
+  box-shadow: 1px 1px 0 #333333;
+}
+
+.icon-button > svg,
+.icon-button > img {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-button.size-small > svg,
+.icon-button.size-small > img {
+  width: 16px;
+  height: 16px;
+}
+
+.icon-button.size-tiny {
+  padding: 0px;
+  box-shadow: 1px 1px 0 #333333;
+}
+
+.icon-button.size-tiny > svg,
+.icon-button.size-tiny > img {
+  width: 14px;
+  height: 14px;
+}
+
+.icon-button:hover {
+  box-shadow: 4px 4px 0 #333333;
+  transform: translate(-1px, -1px);
+}
+
+.icon-button.size-small:hover {
+  box-shadow: 2px 2px 0 #333333;
+  transform: translate(-0.5px, -0.5px);
+}
+
+.icon-button.size-tiny:hover {
+  box-shadow: 1px 1px 0 #333333;
+  transform: translate(-0.5px, -0.5px);
+}
+
+.icon-button.disabled:hover {
+  transform: none;
+}
+
+.icon-button:active {
+  box-shadow: inset 2px 2px 0 #333333;
+  transform: translate(1px, 1px);
+}
+
+.icon-button.size-small:active {
+  box-shadow: inset 1px 1px 0 #333333;
+  transform: translate(0.5px, 0.5px);
+}
+
+.icon-button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(162, 216, 255, 0.7); /* Light blue glow */
+}
+
+.icon-button.disabled,
+.icon-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+}
+
+/* Primary IconButton */
+.primary-icon-button {
+  background-color: #A2D8FF; /* Light Blue */
+  color: #333333; /* Dark Grey */
+}
+
+.primary-icon-button:hover {
+  background-color: #D6F0FF; /* Even lighter blue */
+}
+
+.primary-icon-button:active {
+  background-color: #7FBCE9; /* Darker blue */
+}
+
+/* Secondary IconButton */
+.secondary-icon-button {
+  background-color: #ECECEC; /* Cool Grey */
+  color: #333333; /* Dark Grey */
+}
+
+.secondary-icon-button:hover {
+  background-color: #FFFFFF; /* White */
+}
+
+.secondary-icon-button:active {
+  background-color: #CFCFCF; /* Darker grey */
+}
+
+/* Success IconButton */
+.success-icon-button {
+  background-color: #98D19F; /* Pastel Green */
+  color: #333333; /* Dark Grey */
+}
+
+.success-icon-button:hover {
+  background-color: #C0EAC4; /* Lighter green */
+}
+
+.success-icon-button:active {
+  background-color: #76B97F; /* Darker green */
+}
+
+/* Warning IconButton */
+.warning-icon-button {
+  background-color: #FFD966; /* Warm Yellow */
+  color: #333333; /* Dark Grey */
+}
+
+.warning-icon-button:hover {
+  background-color: #FFEB99; /* Lighter yellow */
+}
+
+.warning-icon-button:active {
+  background-color: #FFC107; /* Darker yellow */
+}
+
+/* Error IconButton */
+.error-icon-button {
+  background-color: #D9534F; /* Muted Red */
+  color: #FFFFFF; /* White */
+}
+
+.error-icon-button:hover {
+  background-color: #E57373; /* Lighter red */
+}
+
+.error-icon-button:active {
+  background-color: #C62828; /* Darker red */
+}
+
+.icon-button.no-outline {
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  margin: 0px;
+}
+
+.icon-button.no-outline:hover {
+  box-shadow: none;
+  background-color: transparent;
+}

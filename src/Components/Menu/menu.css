@@ -1,0 +1,52 @@
+/* Menu Container */
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+  background-color: #FFFFFF;
+  border: 2px solid #333333;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 #333333;
+  min-width: 200px;
+  z-index: 1000;
+}
+
+/* Menu Item */
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: #333333;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.menu-item:hover:not(.disabled),
+.menu-item:focus:not(.disabled) {
+  background-color: #F0F0F0;
+}
+
+.menu-item.disabled {
+  color: #999999;
+  cursor: not-allowed;
+}
+
+.menu-item:focus {
+  outline: none;
+}
+
+/* Menu Item Icon */
+.menu-item-icon {
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+}
+
+/* Submenu Arrow (if needed) */
+.menu-item-submenu::after {
+  content: '▶';
+  margin-left: auto;
+  font-size: 12px;
+}

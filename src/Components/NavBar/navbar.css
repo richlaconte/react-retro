@@ -1,0 +1,64 @@
+/* NavBar Styling */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #FFFFFF;
+  padding: 0 20px;
+  height: 60px;
+  border-bottom: 2px solid #333333; /* Dark Grey Border */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo img {
+  height: 40px;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-menu > * {
+  margin-left: 20px;
+}
+
+.navbar-menu .navbar-item {
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: #333333;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.navbar-menu .navbar-item:hover {
+  color: #007BFF; /* Link Hover Color */
+}
+
+.navbar-menu .navbar-button {
+  padding: 8px 16px;
+  background-color: #A2D8FF; /* Light Blue */
+  border: none;
+  border-radius: 8px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: #333333;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.navbar-menu .navbar-button:hover {
+  background-color: #7FBCE9; /* Darker Blue */
+}
+
+.navbar-menu .navbar-button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(162, 216, 255, 0.7);
+}

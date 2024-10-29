@@ -1,0 +1,102 @@
+/* Slider Container */
+.slider-container {
+  width: 100%;
+  position: relative;
+  font-family: 'Nunito', sans-serif;
+}
+
+.slider-container.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Slider Track */
+.slider-track {
+  width: 100%;
+  height: 8px;
+  background-color: #ECECEC;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #333333;
+}
+
+/* Slider Thumb */
+.slider-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: #FFFFFF;
+  border: 2px solid #333333;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 2px 2px 0 #333333;
+  z-index: 1000;
+}
+
+/* Slider Range */
+.slider-range {
+  height: 8px;
+  background-color: currentColor;
+  border-radius: 4px 0 0 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Variants */
+.slider-track.primary {
+  color: #A2D8FF; /* Light Blue */
+}
+
+.slider-track.secondary {
+  color: #ECECEC; /* Cool Grey */
+}
+
+.slider-track.success {
+  color: #98D19F; /* Pastel Green */
+}
+
+.slider-track.warning {
+  color: #FFD966; /* Warm Yellow */
+}
+
+.slider-track.error {
+  color: #D9534F; /* Muted Red */
+}
+
+/* Sizes */
+.slider-container.small .slider-thumb {
+  width: 16px;
+  height: 16px;
+}
+
+.slider-container.large .slider-thumb {
+  width: 24px;
+  height: 24px;
+}
+
+.slider-container.small .slider-track {
+  height: 6px;
+}
+
+.slider-container.large .slider-track {
+  height: 10px;
+}
+
+/* Value Label */
+.slider-value-label {
+  margin-top: 8px;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Sizes for Value Label */
+.slider-container.small .slider-value-label {
+  font-size: 14px;
+}
+
+.slider-container.large .slider-value-label {
+  font-size: 18px;
+}

@@ -1,0 +1,91 @@
+/* Base Styles */
+.skeleton {
+  background-color: #ECECEC;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+  height: 1em;
+  border-radius: 4px;
+  background-image: linear-gradient(135deg, #ECECEC 25%, #F5F5F5 25%, #F5F5F5 50%, #ECECEC 50%, #ECECEC 75%, #F5F5F5 75%, #F5F5F5 100%);
+  background-size: 8px 8px;
+
+}
+
+/* Variants */
+.skeleton.text {
+  border-radius: 4px;
+}
+
+.skeleton.circular {
+  border-radius: 0;
+  clip-path: polygon(
+    50% 0%,
+    61% 17%,
+    80% 20%,
+    69% 35%,
+    70% 55%,
+    50% 50%,
+    30% 55%,
+    31% 35%,
+    20% 20%,
+    39% 17%
+  );
+  width: 40px;
+  height: 40px;
+}
+
+.skeleton.rectangular {
+  border-radius: 0;
+}
+
+.skeleton.rounded {
+  border-radius: 8px;
+}
+
+/* Pixelated Animation */
+@keyframes pixelate {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.skeleton.pixel {
+  animation: pixelate 12s infinite linear;
+}
+
+.skeleton.pixel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 7px,
+      rgba(0, 0, 0, 0.02) 7px,
+      rgba(0, 0, 0, 0.02) 8px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 7px,
+      rgba(0, 0, 0, 0.02) 7px,
+      rgba(0, 0, 0, 0.02) 8px
+    );
+  pointer-events: none;
+}
+
+/* Custom Sizes */
+.skeleton[style*="width"] {
+  width: auto;
+}
+
+.skeleton[style*="height"] {
+  height: auto;
+}

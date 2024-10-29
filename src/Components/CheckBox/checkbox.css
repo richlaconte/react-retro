@@ -1,0 +1,95 @@
+/* Base Styles */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox-container.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Checkbox Input */
+.checkbox-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Checkbox Label */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+}
+
+/* Checkbox Box */
+.checkbox-box {
+  width: 24px;
+  height: 24px;
+  background-color: #FFFFFF;
+  border: 2px solid #333333;
+  border-radius: 4px;
+  box-shadow: 2px 2px 0 #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+/* Sizes */
+.checkbox-container.small .checkbox-box {
+  width: 16px;
+  height: 16px;
+}
+
+.checkbox-container.large .checkbox-box {
+  width: 32px;
+  height: 32px;
+}
+
+/* Variants */
+.checkbox-input.primary:checked + .checkbox-label .checkbox-box {
+  background-color: #A2D8FF; /* Light Blue */
+}
+
+.checkbox-input.secondary:checked + .checkbox-label .checkbox-box {
+  background-color: #ECECEC; /* Cool Grey */
+}
+
+.checkbox-input.success:checked + .checkbox-label .checkbox-box {
+  background-color: #98D19F; /* Pastel Green */
+}
+
+.checkbox-input.warning:checked + .checkbox-label .checkbox-box {
+  background-color: #FFD966; /* Warm Yellow */
+}
+
+.checkbox-input.error:checked + .checkbox-label .checkbox-box {
+  background-color: #D9534F; /* Muted Red */
+}
+
+/* Checkmark */
+.checkbox-checkmark {
+  width: 16px;
+  height: 16px;
+  color: #FFFFFF;
+}
+
+/* Checkbox Text */
+.checkbox-text {
+  margin-left: 8px;
+  font-size: 16px;
+}
+
+/* Sizes for Text */
+.checkbox-container.small .checkbox-text {
+  font-size: 14px;
+}
+
+.checkbox-container.large .checkbox-text {
+  font-size: 18px;
+}

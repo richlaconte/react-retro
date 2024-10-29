@@ -1,0 +1,96 @@
+/* General Button Styling */
+.button {
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  padding: 10px 20px;
+  border: 2px solid #333333; /* Dark Grey */
+  cursor: pointer;
+  outline: none;
+  text-transform: uppercase;
+  margin: 5px;
+  position: relative;
+  background-color: transparent;
+  transition: all 0.2s ease-in-out;
+  border-radius: 8px; /* Rounded corners for a playful look */
+  box-shadow: 2px 2px 0 #333333;
+}
+
+.button:hover {
+  box-shadow: 4px 4px 0 #333333;
+  transform: translate(-1px, -1px);
+}
+
+.button:active {
+  box-shadow: inset 1.5px 1.5px 0 #333333;
+  transform: translate(-0.5px, -0.5px);
+}
+
+.button:focus-visible {
+  outline: none; /* Ensure no default outline */
+  box-shadow: 0 0 0 3px rgba(162, 216, 255, 0.7); /* Light blue glow */
+}
+
+/* Primary Button */
+.primary-button {
+  background-color: #A2D8FF; /* Light Blue */
+  color: #333333; /* Dark Grey */
+}
+.primary-button:hover {
+  background-color: #D6F0FF; /* Even lighter blue on hover */
+}
+.primary-button:active {
+  top: 2px;
+  left: 2px;
+}
+
+/* Secondary Button */
+.secondary-button {
+  background-color: #ECECEC; /* Cool Grey */
+  color: #333333; /* Dark Grey */
+}
+.secondary-button:hover {
+  background-color: #FFFFFF; /* Brighter grey on hover */
+}
+.secondary-button:active {
+  top: 2px;
+  left: 2px;
+}
+
+/* Success Button */
+.success-button {
+  background-color: #98D19F; /* Pastel Green */
+  color: #333333; /* Dark Grey */
+}
+.success-button:hover {
+  background-color: #C0EAC4; /* Even lighter green on hover */
+}
+.success-button:active {
+  top: 2px;
+  left: 2px;
+}
+
+/* Warning Button */
+.warning-button {
+  background-color: #FFD966; /* Warm Yellow */
+  color: #333333; /* Dark Grey */
+}
+.warning-button:hover {
+  background-color: #FFEB99; /* Even lighter yellow on hover */
+}
+.warning-button:active {
+  top: 2px;
+  left: 2px;
+}
+
+/* Error Button */
+.error-button {
+  background-color: #D9534F; /* Muted Red */
+  color: #FFFFFF; /* White */
+}
+.error-button:hover {
+  background-color: #E57373; /* Lighter red on hover */
+}
+.error-button:active {
+  top: 2px;
+  left: 2px;
+}

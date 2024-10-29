@@ -1,0 +1,118 @@
+/* Container */
+.autocomplete-container {
+  position: relative;
+  display: inline-block;
+  font-family: 'Nunito', sans-serif;
+  width: 100%;
+  max-width: 400px;
+}
+
+.autocomplete-container .textfield-container {
+  margin-bottom: 0px;
+}
+
+.autocomplete-input:focus {
+  border-color: #A2D8FF;
+}
+
+.autocomplete-input::placeholder {
+  color: #999999;
+}
+
+/* Variants */
+.autocomplete-container.primary .autocomplete-input:focus {
+  border-color: #A2D8FF; /* Light Blue */
+}
+
+.autocomplete-container.secondary .autocomplete-input:focus {
+  border-color: #ECECEC; /* Cool Grey */
+}
+
+.autocomplete-container.success .autocomplete-input:focus {
+  border-color: #98D19F; /* Pastel Green */
+}
+
+.autocomplete-container.warning .autocomplete-input:focus {
+  border-color: #FFD966; /* Warm Yellow */
+}
+
+.autocomplete-container.error .autocomplete-input:focus {
+  border-color: #D9534F; /* Muted Red */
+}
+
+/* Sizes */
+.autocomplete-container.small .autocomplete-input {
+  padding: 8px 10px;
+  font-size: 14px;
+}
+
+.autocomplete-container.large .autocomplete-input {
+  padding: 12px 14px;
+  font-size: 18px;
+}
+
+.autocomplete-options-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  margin-top: 0px;
+  background-color: #FFFFFF;
+  border: 2px solid #333333;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 #333333;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.autocomplete-options {
+  padding: 0;
+  list-style: none;
+  overflow-y: auto;
+  height: 100%;
+  margin: 0;
+  max-height: 200px;
+}
+
+.autocomplete-options::-webkit-scrollbar {
+  width: 8px;
+}
+
+.autocomplete-options::-webkit-scrollbar-thumb {
+  background-color: #A2D8FF;
+  border-radius: 4px;
+}
+
+.autocomplete-options::-webkit-scrollbar-track {
+  background-color: #F0F0F0;
+}
+
+/* Option Item */
+.autocomplete-option {
+  padding: 10px 12px;
+  font-size: 16px;
+  color: #333333;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.autocomplete-option:hover,
+.autocomplete-option.highlighted {
+  background-color: #F0F0F0;
+}
+
+.autocomplete-option[aria-selected="true"] {
+  background-color: #E8F5FF;
+}
+
+/* Sizes for Options */
+.autocomplete-container.small .autocomplete-option {
+  padding: 8px 10px;
+  font-size: 14px;
+}
+
+.autocomplete-container.large .autocomplete-option {
+  padding: 12px 14px;
+  font-size: 18px;
+}

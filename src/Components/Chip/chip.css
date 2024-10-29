@@ -1,0 +1,93 @@
+/* Chip Container */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  color: #333333;
+  background-color: #FFFFFF;
+  border: 2px solid #333333;
+  border-radius: 16px;
+  box-shadow: 2px 2px 0 #333333;
+  cursor: default;
+  transition: background-color 0.2s ease-in-out;
+  margin: 4px;
+}
+
+.chip.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Sizes */
+.chip.small {
+  font-size: 12px;
+  padding: 2px 6px;
+}
+
+.chip.medium {
+  font-size: 14px;
+  padding: 4px 8px;
+}
+
+.chip.large {
+  font-size: 16px;
+  padding: 6px 10px;
+}
+
+/* Variants */
+.chip.primary {
+  background-color: #A2D8FF; /* Light Blue */
+}
+
+.chip.secondary {
+  background-color: #ECECEC; /* Cool Grey */
+}
+
+.chip.success {
+  background-color: #98D19F; /* Pastel Green */
+}
+
+.chip.warning {
+  background-color: #FFD966; /* Warm Yellow */
+}
+
+.chip.error {
+  background-color: #D9534F; /* Muted Red */
+  color: #FFFFFF;
+}
+
+/* Chip Elements */
+.chip-icon {
+  display: flex;
+  align-items: center;
+  margin-right: 6px;
+  font-size: 16px;
+}
+
+.chip-label {
+  white-space: nowrap;
+}
+
+.chip-delete {
+  background: none;
+  border: none;
+  color: inherit;
+  margin-left: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.chip-delete:hover {
+  color: #000000;
+}
+
+.chip-delete:focus {
+  outline: none;
+}
+
+.chip.disabled .chip-delete {
+  display: none;
+}

@@ -1,0 +1,241 @@
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  background-color: #F5F5F5;
+  color: #333333;
+}
+
+.landing-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #A2D8FF; /* Light Blue */
+  color: #333333;
+  position: relative;
+}
+
+.logo {
+  width: 260px;
+  margin-bottom: 20px;
+}
+
+.hero-section h1 {
+  font-size: 56px;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+section {
+  padding: 10px 20px 10px 20px
+}
+
+
+.feature h3 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.feature p {
+  font-size: 18px;
+}
+
+.components-section h2 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.components-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.component-card {
+  width: 30%;
+  min-width: 250px;
+  background-color: #FFFFFF;
+  padding: 20px;
+  margin-bottom: 40px;
+  border: 2px solid #333333;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 #333333;
+  text-align: center;
+}
+
+.component-card h3 {
+  margin-bottom: 16px;
+}
+
+.component-card > *:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+/* Use Cases Section */
+.use-cases-section {
+  padding: 60px 20px;
+}
+
+.use-cases-section h2 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.use-cases {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.use-case {
+  width: 45%;
+  min-width: 300px;
+  margin-bottom: 40px;
+}
+
+.use-case img {
+  width: 100%;
+  border: 2px solid #333333;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 #333333;
+  margin-bottom: 20px;
+}
+
+.use-case h3 {
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.use-case p {
+  font-size: 18px;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  padding: 60px 20px;
+  background-color: #FFD966; /* Warm Yellow */
+}
+
+.testimonials-section h2 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+.testimonials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.testimonial {
+  width: 45%;
+  min-width: 300px;
+  background-color: #FFFFFF;
+  padding: 20px;
+  margin-bottom: 40px;
+  border: 2px solid #333333;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 #333333;
+}
+
+.testimonial p {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.testimonial h4 {
+  text-align: right;
+  font-size: 16px;
+  color: #555555;
+}
+
+/* Call to Action Section */
+.cta-section {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #98D19F; /* Pastel Green */
+  color: #333333;
+}
+
+.cta-section h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.cta-section p {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+/* Footer */
+.footer {
+  background-color: #ECECEC;
+  padding: 20px;
+  border-top: 2px solid #333333;
+  box-shadow: 0 -4px 0 #333333;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  width: 80px;
+}
+
+.social-links a {
+  color: #333333;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: #555555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .components-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .use-cases {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonials {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature, .component-card, .use-case, .testimonial {
+    width: 80%;
+  }
+}

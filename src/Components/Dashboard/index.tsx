@@ -1,0 +1,30 @@
+import React from 'react';
+import './dashboard.css';
+import NavBar from '../NavBar';
+import Sidebar from '../Sidebar';
+
+interface DashboardProps {
+  children: React.ReactNode;
+  sidebarContent: React.ReactNode;
+  navbarContent?: React.ReactNode;
+  logo?: React.ReactNode;
+}
+
+const Dashboard: React.FC<DashboardProps> = ({
+  children,
+  sidebarContent,
+  navbarContent,
+  logo,
+}) => {
+  return (
+    <div className="dashboard-container">
+      <NavBar logo={logo}>{navbarContent}</NavBar>
+      <div className="dashboard-content">
+        <Sidebar logo={logo}>{sidebarContent}</Sidebar>
+        <main className="dashboard-main">{children}</main>
+      </div>
+    </div>
+  );
+};
+
+export default Dashboard;

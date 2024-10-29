@@ -1,0 +1,164 @@
+/*
+  Colors
+  Yellow:
+    - #F4C430
+    - #FFD966
+
+  Red:
+    - #D9534F
+    - #FF5733
+
+  Grey/Beige:
+    - #D6D2C4
+    - #ECECEC
+  
+  Grey/Black:
+    - #333333
+    - #4B4B4B
+
+  Green:
+    - #98D19F
+    - #B3E5B0
+
+  Blue:
+    - #A2D8FF
+    - #BEE5FF
+*/
+
+.bg-yellow {
+  background-color: #F4C430;
+}
+
+.bg-yellowAlt {
+  background-color: #FFD966;
+}
+
+.bg-red {
+  background-color: #D9534F;
+}
+
+.bg-redAlt {
+  background-color: #FF5733;
+}
+
+.bg-grey {
+  background-color: #D6D2C4;
+}
+
+.bg-beige {
+  background-color: #ECECEC;
+}
+
+.bg-black {
+  background-color: #333333;
+}
+
+.bg-blackAlt {
+  background-color: #4B4B4B;
+}
+
+.bg-green {
+  background-color: #98D19F;
+}
+
+.bg-greenAlt {
+  background-color: #B3E5B0;
+}
+
+.bg-blue {
+  background-color: #A2D8FF;
+}
+
+.bg-blueAlt {
+  background-color: #BEE5FF;
+}
+
+.bg-primary {
+  background-color: #A2D8FF;
+}
+
+.bg-primary-alt {
+  background-color: #D6F0FF;
+}
+
+.bg-secondary {
+  background-color: #ECECEC;
+}
+
+.bg-secondary-alt {
+  background-color: #FFFFFF;
+}
+
+.bg-success {
+  background-color: #98D19F;
+}
+
+.bg-success-alt {
+  background-color: #C0EAC4;
+}
+
+.bg-warning {
+  background-color: #FFD966;
+}
+
+.bg-warning-alt { 
+  background-color: #FFEB99;
+}
+
+.bg-error {
+  background-color: #D9534F;
+}
+
+.bg-error-alt {
+  background-color: #E57373;
+}
+
+.example {
+  width: 100px;
+  height: 20px;
+}
+
+html {
+  font-family: rubik;
+}
+
+body {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+/* Additional styles for the app */
+.app-container {
+  position: relative;
+}
+
+.main-content {
+  padding: 20px;
+}
+
+.toggle-button {
+  margin-bottom: 20px;
+}
+
+.menu-button {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    left: -250px;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .menu-button {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+}
+

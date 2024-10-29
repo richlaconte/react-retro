@@ -1,0 +1,97 @@
+/* Accordion Container */
+.accordion {
+  width: 100%;
+  font-family: 'Nunito', sans-serif;
+  border: 2px solid #333333;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 4px 4px 0 #333333;
+}
+
+/* Disabled State */
+.accordion-item.disabled .accordion-header {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Accordion Header */
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px;
+  background-color: #A2D8FF; /* Light Blue */
+  color: #333333;
+  border: none;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.accordion-header:hover {
+  background-color: #7FBCE9; /* Slightly Darker Blue */
+}
+
+.accordion-header.disabled {
+  background-color: #ECECEC;
+  cursor: not-allowed;
+}
+
+.accordion-header-content {
+  flex: 1;
+}
+
+/* Accordion Icon */
+.accordion-icon {
+  margin-left: 16px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+
+/* Accordion Content */
+.accordion-content {
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+}
+
+.accordion-content-inner {
+  padding: 16px;
+  background-color: #FFFFFF;
+  color: #333333;
+  border-top: 1px solid #ECECEC;
+}
+
+/* Expanded State */
+.accordion-item.expanded .accordion-header {
+  background-color: #98D19F; /* Pastel Green */
+}
+
+.accordion-item.expanded .accordion-header:hover {
+  background-color: #7CB583; /* Slightly Darker Green */
+}
+
+.accordion-item.expanded .accordion-content {
+  height: auto;
+}
+
+/* Focus Styles */
+.accordion-header:focus-visible {
+  outline: 3px solid rgba(162, 216, 255, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .accordion-header {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .accordion-content-inner {
+    padding: 12px;
+  }
+}

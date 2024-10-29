@@ -1,0 +1,100 @@
+/* Container */
+.textfield-container {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  position: relative;
+}
+
+/* Label */
+.textfield-label {
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  color: #333333; /* Dark Grey */
+  margin-bottom: 5px;
+}
+
+.textfield-label.disabled {
+  color: #A0A0A0; /* Light Grey */
+}
+
+/* Base Input Field Styles */
+.textfield-input {
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  padding: 10px;
+  background-color: transparent;
+  color: #4B4B4B; /* Dark Grey/Black */
+  outline: none;
+  transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  resize: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Placeholder Text */
+.textfield-input::placeholder {
+  color: #A0A0A0; /* Light Grey */
+}
+
+/* Standard Variant */
+.textfield-input.standard {
+  border: none;
+  border-bottom: 2px solid #4B4B4B; /* Dark Grey/Black */
+  border-radius: 0; /* Straight edges */
+}
+
+.textfield-input.standard:focus {
+  border-bottom-color: #A2D8FF; /* Light Blue */
+  background-color: #F0FAFF; /* Very light blue background */
+}
+
+.textfield-input.standard.error {
+  border-bottom-color: #D9534F; /* Muted Red */
+}
+
+.textfield-input.standard.disabled {
+  border-bottom-color: #ECECEC; /* Cool Grey/Beige */
+  color: #A0A0A0; /* Light Grey */
+  background-color: #F7F7F7; /* Light Grey Background */
+  cursor: not-allowed;
+}
+
+/* Contained Variant */
+.textfield-input.contained {
+  border: 2px solid #4B4B4B; /* Dark Grey/Black */
+  background-color: #F7F7F7; /* Light Grey Background */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.textfield-input.contained:focus {
+  border-color: #A2D8FF; /* Light Blue */
+  background-color: #F0FAFF; /* Very light blue background */
+}
+
+.textfield-input.contained.error {
+  border-color: #D9534F; /* Muted Red */
+}
+
+.textfield-input.contained.disabled {
+  border-color: #ECECEC; /* Cool Grey/Beige */
+  color: #A0A0A0; /* Light Grey */
+  background-color: #F7F7F7; /* Light Grey Background */
+  cursor: not-allowed;
+}
+
+/* Error State */
+.textfield-input.error:focus {
+  background-color: #FDE8E8; /* Very light red background */
+}
+
+/* Helper Text */
+.helper-text {
+  font-size: 12px;
+  color: #4B4B4B; /* Dark Grey/Black */
+  margin-top: 5px;
+}
+
+.helper-text.error {
+  color: #D9534F; /* Muted Red */
+}
