@@ -13,6 +13,10 @@
   transition: all 0.2s ease-in-out;
   border-radius: 8px; /* Rounded corners for a playful look */
   box-shadow: 2px 2px 0 #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .button:hover {
@@ -93,4 +97,16 @@
 .error-button:active {
   top: 2px;
   left: 2px;
+}
+
+.button-icon-end {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-icon-end {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

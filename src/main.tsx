@@ -31,6 +31,10 @@ import SliderPreview from './Components/Slider/SliderPreview.tsx'
 import LandingPage from './Pages/LandingPage/index.tsx'
 import AvatarPreview from './Components/Avatar/AvatarPreview.tsx'
 import CodePreview from './Components/Code/CodePreview.tsx'
+import RatingPreview from './Components/Rating/RatingPreview.tsx'
+import StepperPreview from './Components/Stepper/StepperPreview.tsx'
+import TabsPreview from './Components/Tabs/TabsPreview.tsx'
+import RadioGroupPreview from './Components/RadioGroup/RadioGroupPreview.tsx'
 
 const router = createBrowserRouter([
   {
@@ -110,8 +114,20 @@ const router = createBrowserRouter([
         element: <ProgressPreview />,
       },
       {
+        path: "/design/radiogroup",
+        element: <RadioGroupPreview />,
+      },
+      {
+        path: "/design/rating",
+        element: <RatingPreview />,
+      },
+      {
         path: "/design/select",
         element: <SelectPreview />,
+      },
+      {
+        path: "/design/stepper",
+        element: <StepperPreview />,
       },
       {
         path: "/design/skeleton",
@@ -124,6 +140,10 @@ const router = createBrowserRouter([
       {
         path: "/design/switch",
         element: <SwitchPreview />,
+      },
+      {
+        path: "/design/tabs",
+        element: <TabsPreview />,
       },
       {
         path: "/design/textfield",

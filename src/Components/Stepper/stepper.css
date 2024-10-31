@@ -1,0 +1,86 @@
+/* Stepper Container Styles */
+.stepper-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  padding: 20px;
+}
+
+.stepper-container.vertical {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Stepper Step Styles */
+.stepper-step {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.stepper-step .step-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: #ECECEC; /* Cool Grey */
+  border-radius: 50%;
+  border: 2px solid #333333; /* Dark Grey */
+  box-shadow: 4px 4px 0 #333333; /* Sharp shadow for retro look */
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  color: #333333;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.stepper-step .step-label {
+  margin-left: 10px;
+  font-family: 'Nunito', sans-serif;
+  color: #333333;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.stepper-step .step-connector {
+  width: 50px;
+  height: 4px;
+  background-color: #333333; /* Dark Grey */
+  position: absolute;
+  left: 40px; /* Offset to align connector between circles */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.stepper-container.vertical .step-connector {
+  width: 4px;
+  height: 40px;
+  left: 20px;
+  top: 40px; /* Offset for vertical alignment */
+  transform: translateX(-50%);
+}
+
+/* Active Step Styles */
+.stepper-step.active .step-circle {
+  background-color: #FFD966; /* Warm Yellow */
+  transform: scale(1.1);
+  box-shadow: 5px 5px 0 #333333;
+}
+
+/* Completed Step Styles */
+.stepper-step.completed .step-circle {
+  background-color: #98D19F; /* Pastel Green for completed steps */
+  color: #FFFFFF; /* White text */
+}
+
+.stepper-step.completed .step-label {
+  font-weight: bold;
+}
+
+/* Hover Effect */
+.stepper-step:hover .step-circle {
+  transform: scale(1.15);
+  box-shadow: 5px 5px 0 #333333;
+}

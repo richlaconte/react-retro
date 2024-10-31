@@ -1,0 +1,40 @@
+/* Rating Container Styles */
+.rating-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Size Variants */
+.rating-container.small .star {
+  font-size: 16px;
+}
+
+.rating-container.medium .star {
+  font-size: 24px;
+}
+
+.rating-container.large .star {
+  font-size: 32px;
+}
+
+/* Star Styles */
+.star {
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out, color 0.2s ease-in-out;
+  color: #ECECEC; /* Default cool grey for unselected stars */
+  border-radius: 4px; /* Rounded edges for a retro feel */
+}
+
+.star.hover {
+  color: #FFD966; /* Warm yellow for hover */
+  transform: scale(1.1);
+}
+
+.star.selected {
+  color: #FFD966; /* Warm yellow for selected stars */
+}
+
+.star:hover {
+  transform: scale(1.1);
+}

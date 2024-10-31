@@ -1,0 +1,62 @@
+/* Tabs Container */
+.tabs-container {
+  width: 100%;
+  font-family: 'Nunito', sans-serif;
+  color: #333333;
+  border: 2px solid #333333;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 #333333; /* Sharp shadow for retro look */
+  overflow: hidden;
+}
+
+/* Tabs Header */
+.tabs-header {
+  display: flex;
+  position: relative;
+  border-bottom: 2px solid #333333;
+  background-color: #ECECEC; /* Cool Grey background */
+}
+
+/* Individual Tab Label */
+.tab-label {
+  flex: 1;
+  padding: 12px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-transform: uppercase;
+  border-right: 2px solid #333333; /* Divider for retro look */
+}
+
+.tab-label:last-child {
+  border-right: none;
+}
+
+/* Active Tab Label */
+.tab-label.active {
+  background-color: #FFD966; /* Warm Yellow for active tab */
+  font-weight: bold;
+  box-shadow: inset 2px 2px 0 #000000;
+}
+
+/* Hover Effect */
+.tab-label:hover {
+  background-color: #FFEB99; /* Lighter yellow on hover */
+}
+
+/* Tab Indicator */
+.tab-indicator {
+  position: absolute;
+  bottom: -2px;
+  height: 4px;
+  width: calc(100% / var(--number-of-tabs));
+  background-color: #98D19F; /* Pastel Green for the indicator */
+  transition: left 0.3s ease;
+}
+
+/* Tabs Content */
+.tabs-content {
+  padding: 20px;
+  background-color: #FFFFFF; /* White background for content */
+  margin-top: -2px; /* Align content with tab header */
+}

@@ -7,12 +7,16 @@ const Button: FC<{
   onClick?: (e?: any) => void
   id?: string
   style?: React.CSSProperties
+  iconStart?: React.ReactNode
+  iconEnd?: React.ReactNode
   children: React.ReactNode 
 }> = ({
   variant = 'primary',
   onClick,
   id,
   style,
+  iconStart,
+  iconEnd,
   children
 }) => {
   return (
@@ -21,7 +25,11 @@ const Button: FC<{
       className={`button ${variant}-button`}
       onClick={onClick}
       style={{...style}}
-    >{children}</button>
+    >
+      {iconStart && <div className="button-icon-start">{iconStart}</div>}
+      {children}
+      {iconEnd && <div className="button-icon-end">{iconEnd}</div>}
+    </button>
   )
 }
 

@@ -18,6 +18,8 @@ import IconButton from '../../Components/IconButton';
 import boston from '../../assets/boston.jpg'
 import Slider from '../../Components/Slider/Slider';
 import Select from '../../Components/Select';
+import Tabs from '../../Components/Tabs';
+import TextField from '../../Components/TextField';
 
 const LandingPage: React.FC = () => {
   const [showAlert, setShowAlert] = useState(true);
@@ -25,6 +27,10 @@ const LandingPage: React.FC = () => {
   const [play, setPlay] = useState(false);
   const [progress, setProgress] = useState(75);
   const [progressColor, setProgressColor] = useState('success');
+
+  const [songName, setSongName] = useState('Peace of mind');
+  const [artistName, setArtistName] = useState('Boston');
+
   const navigate = useNavigate();
   return (
     <div className="landing-page">
@@ -32,14 +38,16 @@ const LandingPage: React.FC = () => {
       <section className="hero-section">
         <img src={reactRetroLogo} alt="RetroUI Logo" className="logo" />
         <p className="subtitle">
-          Build beautiful, retro-inspired interfaces with ease.
+          Because life's too short to keep using MUI.
         </p>
-        <Button variant="primary" onClick={() => navigate('/design')}>
-          Get Started <FaArrowRight />
-        </Button>
-        <Button variant="secondary">
-          <FaGithub /> View on GitHub
-        </Button>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px' }}>
+          <Button variant="primary" onClick={() => navigate('/design')} iconEnd={<FaArrowRight />}>
+            Get Started
+          </Button>
+          <Button variant="secondary" iconStart={<FaGithub />}>
+            View on GitHub
+          </Button>
+        </div>
       </section>
       <section className="features-section bg-secondary" style={{ paddingTop: '16px'}}>
       {
@@ -48,55 +56,54 @@ const LandingPage: React.FC = () => {
           <Code withCopy>npm i react-retro</Code>
         </Alert>
       }
-        <div style={{ display: 'flex', gap: '16px', marginTop: '22px', justifyContent: 'center' }}>
-          <Card style={{ width: '240px', padding: '0px', backgroundColor: 'white' }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px'}}>
-              <Progress variant="circular" mode="determinate" color='success' size='large' value={75} showValue />
-              <div style={{ flexGrow: 1, textAlign: 'left' }}>
-                <p>Page views</p>
-                <h3>432,391</h3>
+        <div style={{ display: 'flex', marginTop: '22px', overflow: 'auto', paddingBottom: '10px' }}>
+          <div style={{ display: 'flex', gap: '16px', paddingRight: '8px', paddingLeft: '4px', paddingTop: '4px' }}>
+            <Card style={{ width: '240px', padding: '0px', backgroundColor: 'white' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px'}}>
+                <Progress variant="circular" mode="determinate" color='success' size='large' value={75} showValue />
+                <div style={{ flexGrow: 1, textAlign: 'left' }}>
+                  <p>Page views</p>
+                  <h3>432,391</h3>
+                </div>
               </div>
-            </div>
-          </Card>
-          <Card style={{ width: '240px', padding: '0px', backgroundColor: 'white' }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px'}}>
-              <Progress variant="circular" mode="determinate" color='success' size='large' value={75} showValue valueType='positive' />
-              <div style={{ flexGrow: 1, textAlign: 'left' }}>
-                <p>Page views</p>
-                <h3>432,391</h3>
+            </Card>
+            <Card style={{ width: '240px', padding: '0px', backgroundColor: 'white' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px'}}>
+                <Progress variant="circular" mode="determinate" color='success' size='large' value={75} showValue valueType='positive' />
+                <div style={{ flexGrow: 1, textAlign: 'left' }}>
+                  <p>Page views</p>
+                  <h3>432,391</h3>
+                </div>
               </div>
-            </div>
-          </Card>
-          <Card style={{ width: '240px', padding: '0px', backgroundColor: 'white' }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px'}}>
-              <Progress variant="circular" mode="determinate" color='success' size='large' value={75} showValue valueType='positive' />
-              <div style={{ flexGrow: 1, textAlign: 'left' }}>
-                <p>Page views</p>
-                <h3>432,391</h3>
+            </Card>
+            <Card style={{ width: '240px', padding: '0px', backgroundColor: 'white' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px'}}>
+                <Progress variant="circular" mode="determinate" color='success' size='large' value={75} showValue valueType='positive' />
+                <div style={{ flexGrow: 1, textAlign: 'left' }}>
+                  <p>Page views</p>
+                  <h3>432,391</h3>
+                </div>
               </div>
-            </div>
-          </Card>
-          <Card style={{ width: '240px', padding: '0px', backgroundColor: 'white' }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px'}}>
-              <Progress variant="circular" mode="determinate" color='success' size='large' value={75} showValue />
-              <div style={{ flexGrow: 1, textAlign: 'left' }}>
-                <p>Page views</p>
-                <h3>432,391</h3>
+            </Card>
+            <Card style={{ width: '240px', padding: '0px', backgroundColor: 'white' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px'}}>
+                <Progress variant="circular" mode="determinate" color='success' size='large' value={75} showValue />
+                <div style={{ flexGrow: 1, textAlign: 'left' }}>
+                  <p>Page views</p>
+                  <h3>432,391</h3>
+                </div>
               </div>
-            </div>
-          </Card>
+            </Card>
+          </div>
         </div>
       </section>
       <section className='bg-secondary'>
-        <div style={{ display: 'flex', gap: '16px' }}>
+        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', justifyContent: 'center' }}>
           <div>
-            <Accordion style={{ width: '400px' }}>
+            <Accordion style={{ maxWidth: '100%' }}>
               <AccordionItem id="state" header="State">
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
-                    <Switch checked={loading} onChange={() => setLoading(!loading)} style={{ marginRight: '8px'}} />
-                    <p>Show loading state</p>
-                  </div>
+                    <Switch checked={loading} onChange={() => setLoading(!loading)} style={{ marginRight: '8px'}} label='Show loading state' />
                   <div>
                     <p style={{ marginBottom: '8px' }}>Song progress value</p>
                     <Slider value={progress} onChange={(value) => {
@@ -108,7 +115,18 @@ const LandingPage: React.FC = () => {
                 </div>
               </AccordionItem>
               <AccordionItem id="content" header="Content">
-                Test
+                <TextField
+                  label="Song name"
+                  placeholder="Enter song name"
+                  value={songName}
+                  onChange={(e) => setSongName(e.target.value)}
+                />
+                <TextField
+                  label="Artist name"
+                  placeholder="Enter artist name"
+                  value={artistName}
+                  onChange={(e) => setArtistName(e.target.value)}
+                />
               </AccordionItem>
               <AccordionItem id='style' header="Style">
                 <Select
@@ -144,12 +162,12 @@ const LandingPage: React.FC = () => {
                     {
                       loading ?
                       <Skeleton width={120} height={24} variant="rectangular" /> :
-                      <p style={{ fontWeight: 'bold' }}>Boston</p>
+                      <p style={{ fontWeight: 'bold' }}>{artistName}</p>
                     }
                     {
                       loading ?
                       <Skeleton width={120} height={24} variant="rectangular" /> :
-                      <p>Peace of mind</p>
+                      <p>{songName}</p>
                     }
                   </div>
                   <div>
@@ -172,6 +190,9 @@ const LandingPage: React.FC = () => {
               </div>
             </Card>
           </div>
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '24px' }}>
+          <Button variant='success' iconEnd={<FaArrowRight />}>Browse Components</Button>
         </div>
       </section>
 

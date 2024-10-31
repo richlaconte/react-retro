@@ -4,6 +4,8 @@ import ListItem from '../../Components/ListItem';
 import Dashboard from '../../Components/Dashboard';
 import { Outlet, useNavigate, Link } from 'react-router-dom';
 
+import logo from '../../assets/reactRetroLogo.png'
+
 const index = () => {
   const navigate = useNavigate();
 
@@ -26,10 +28,14 @@ const index = () => {
       <ListItem title="Modal" onClick={() => navigate('/design/modal') } />
       <ListItem title="Popover" onClick={() => navigate('/design/popover') } />
       <ListItem title="Progress" onClick={() => navigate('/design/progress') } />
+      <ListItem title="Radio Group" onClick={() => navigate('/design/radiogroup') } />
+      <ListItem title="Rating" onClick={() => navigate('/design/rating') } />
       <ListItem title="Select" onClick={() => navigate('/design/select') } />
       <ListItem title="Slider" onClick={() => navigate('/design/slider') } />
       <ListItem title="Switch" onClick={() => navigate('/design/switch') } />
       <ListItem title="Skeleton" onClick={() => navigate('/design/skeleton') } />
+      <ListItem title="Stepper" onClick={() => navigate('/design/stepper') } />
+      <ListItem title="Tabs" onClick={() => navigate('/design/tabs') } />
       <ListItem title="Text Field" onClick={() => navigate('/design/textfield') } />
       <ListItem title="Toggle Button" onClick={() => navigate('/design/togglebutton') } />
     </List>
@@ -47,13 +53,11 @@ const index = () => {
     </>
   );
 
-  const logo = <img src="logo.png" alt="Logo" />;
-
   return (
     <Dashboard
       sidebarContent={sidebarContent}
       navbarContent={navbarContent}
-      logo={logo}
+      navbarLogo={<img src={logo} />}
     >
       <Outlet />
     </Dashboard>
