@@ -42,7 +42,7 @@ const LandingPage: React.FC = () => {
           <Button variant="primary" onClick={() => navigate('/design')} iconEnd={<FaArrowRight />}>
             Get Started
           </Button>
-          <Button variant="secondary" iconStart={<FaGithub />}>
+          <Button variant="secondary" iconStart={<FaGithub />} onClick={() => window.open('https://github.com/richlaconte/react-retro', '_blank')}>
             View on GitHub
           </Button>
         </div>
@@ -197,7 +197,7 @@ const LandingPage: React.FC = () => {
           </div>
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '24px' }}>
-          <Button variant='success' iconEnd={<FaArrowRight />}>Browse Components</Button>
+          <Button variant='success' iconEnd={<FaArrowRight />} onClick={() => navigate('/design')}>Browse Components</Button>
         </div>
       </section>
       <section className="cta-section">
@@ -209,7 +209,7 @@ const LandingPage: React.FC = () => {
           <Button variant="primary" onClick={() => navigate('/design')} iconEnd={<FaArrowRight />}>
             Get Started
           </Button>
-          <Button variant="secondary" iconStart={<FaGithub />}>
+          <Button variant="secondary" iconStart={<FaGithub />} onClick={() => window.open('https://github.com/richlaconte/react-retro', '_blank')}>
             Contribute
           </Button>
         </div>
