@@ -40,7 +40,7 @@ const ProgressPreview = () => {
       </div>
       <div style={{ padding: '20px' }}>
         <h2>Linear Indeterminate Progress</h2>
-        <Progress variant="linear" color="secondary" value={75} />
+        <Progress variant="linear" color="success" value={75} />
       </div>
       <div style={{ padding: '20px' }}>
         <h2>Linear Determinate Progress</h2>

@@ -16,14 +16,20 @@ const ComponentPreview: FC<{
   return (
     <div>
       <Card>
+        <h2 style={{ marginBottom: '12px' }}>
+          Interactive Preview
+        </h2>
         <div>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
             {component}
           </div>
           <div style={{ display: 'flex', gap: '16px' }}>
             <div style={{ flexGrow: 1 }}>
               <Card style={{ minWidth: '400px' }}>
-                {controls}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                  <h2>Props</h2>
+                  {controls}
+                </div>
               </Card>
             </div>
             <div>

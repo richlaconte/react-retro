@@ -23,14 +23,14 @@ const ButtonPreview = () => {
   const codeValue = `<Button${variant !== 'primary' ? ` variant="${variant}"` : ''}${icon === 'start' ? ' iconStart={<FaArrowLeft />}': icon === 'end' ? ' iconEnd={<FaArrowRight />}': ''}>\n  ${value}\n</Button>`
 
   const modalFooter = (
-    <>
+    <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
       <Button variant='secondary' onClick={closeModal}>
         Cancel
       </Button>
       <Button variant='primary' onClick={closeModal}>
         Confirm
       </Button>
-    </>
+    </div>
   );
 
   return (

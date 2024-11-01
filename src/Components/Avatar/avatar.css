@@ -13,6 +13,10 @@
   position: relative;
 }
 
+.avatar-container.square {
+  border-radius: 8px;
+}
+
 /* Size Variants */
 .avatar-container.small {
   width: 40px;

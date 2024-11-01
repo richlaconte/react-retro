@@ -2,13 +2,14 @@ import React from 'react';
 import './avatar.css';
 
 interface AvatarProps {
-  src?: string; // Image URL
-  alt?: string; // Alt text for the image
-  initials?: string; // Initials to display if no image is provided
-  icon?: React.ReactNode; // Icon to display if no image or initials are provided
-  size?: 'small' | 'medium' | 'large'; // Size variant
-  backgroundColor?: string; // Custom background color
-  textColor?: string; // Custom text color
+  src?: string
+  alt?: string
+  initials?: string
+  icon?: React.ReactNode
+  size?: 'small' | 'medium' | 'large'
+  backgroundColor?: string
+  textColor?: string
+  square?: boolean
 }
 
 const Avatar: React.FC<AvatarProps> = ({
@@ -17,12 +18,13 @@ const Avatar: React.FC<AvatarProps> = ({
   initials,
   icon,
   size = 'medium',
-  backgroundColor = '#A2D8FF', // Default light blue
-  textColor = '#333333', // Default dark grey
+  backgroundColor = '#A2D8FF',
+  textColor = '#333333',
+  square = false
 }) => {
   return (
     <div
-      className={`avatar-container ${size}`}
+      className={`avatar-container ${square ? 'square' : ''} ${size}`}
       style={{ backgroundColor, color: textColor }}
     >
       {src ? (

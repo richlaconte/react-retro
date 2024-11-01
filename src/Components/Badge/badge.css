@@ -11,7 +11,7 @@
   right: -10px;
   min-width: 20px;
   height: 20px;
-  padding: 0 6px;
+  padding: 2px 4px;
   background-color: #A2D8FF; /* Default Light Blue */
   color: #FFFFFF;
   font-family: 'Nunito', sans-serif;
@@ -20,9 +20,12 @@
   line-height: 20px;
   text-align: center;
   border: 2px solid #333333;
-  border-radius: 50%;
+  border-radius: 8px;
   box-shadow: 2px 2px 0 #333333;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Variants */

@@ -20,7 +20,9 @@ const Badge: React.FC<BadgeProps> = ({
   return (
     <div className="badge-container">
       {children}
-      <span className={`badge ${variant}`}>{displayContent}</span>
+      <div className={`badge ${variant}`}>
+        <span>{displayContent}</span>
+      </div>
     </div>
   );
 };

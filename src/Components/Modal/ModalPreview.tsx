@@ -13,14 +13,14 @@ const ModalPreview = () => {
   const closeModal = () => setModalOpen(false);
 
   const modalFooter = (
-    <>
+    <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
       <Button variant='secondary' onClick={closeModal}>
         Cancel
       </Button>
       <Button variant='primary' onClick={closeModal}>
         Confirm
       </Button>
-    </>
+    </div>
   );
 
   return (
