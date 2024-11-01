@@ -2,11 +2,10 @@ import React from 'react'
 import Button from '.'
 import Modal from '../Modal'
 import TextField from '../TextField'
-import Card from '../Card'
-import Code from '../Code'
 import Select from '../Select'
 import RadioGroup from '../RadioGroup'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
+import ComponentPreview from '../../Utils/ComponentPreview'
 
 const ButtonPreview = () => {
   const [isModalOpen, setModalOpen] = React.useState(false);
@@ -20,6 +19,8 @@ const ButtonPreview = () => {
   const [variant, setVariant] = React.useState('primary');
   const [value, setValue] = React.useState('Primary');
   const [icon, setIcon] = React.useState('');
+
+  const codeValue = `<Button${variant !== 'primary' ? ` variant="${variant}"` : ''}${icon === 'start' ? ' iconStart={<FaArrowLeft />}': icon === 'end' ? ' iconEnd={<FaArrowRight />}': ''}>\n  ${value}\n</Button>`
 
   const modalFooter = (
     <>
@@ -72,62 +73,39 @@ const ButtonPreview = () => {
           </Modal>
         </div>
       </div>
-      <div>
-        <Card>
-          <div>
-            <Button style={{ marginBottom: '26px' }} variant={variant as any} iconStart={icon === 'start' ? <FaArrowLeft /> : ''} iconEnd={icon === 'end' ? <FaArrowRight /> : ''}>
-              {value}
-            </Button>
-            <div style={{ display: 'flex', gap: '16px' }}>
-              <div style={{ flexGrow: 1 }}>
-                <Card style={{ minWidth: '400px' }}>
-                  <TextField
-                    label="Button Text"
-                    placeholder="Enter text here..."
-                    value={value}
-                    onChange={(e) => setValue(e.target.value)}
-                    variant='contained'
-                  />
-                  <Select
-                    label="Variant"
-                    value={variant}
-                    onChange={(e) => setVariant(e)}
-                    options={[
-                      { label: 'Primary', value: 'primary' },
-                      { label: 'Secondary', value: 'secondary' },
-                      { label: 'Success', value: 'success' },
-                      { label: 'Warning', value: 'warning' },
-                      { label: 'Error', value: 'error' },
-                    ]}
-                  />
-                  <RadioGroup value={icon} onChange={(value) => setIcon(value)} options={[{ label: 'None', value: '' }, { label: 'Icon Start', value: 'start' }, { label: 'Icon End', value: 'end' }]} name={''} />
-                </Card>
-              </div>
-              <div>
-                
-              </div>
-              <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                <div style={{ width: '100%', display: 'flex' }}>
-                  <Code variant='block' withCopy style={{ flexGrow: 1 }}>
-                    {
-                      `import { Button } from 'react-retro'`
-                    }
-                  </Code>
-                </div>
-                <div style={{ width: '100%', display: 'flex' }}>
-                  <Code variant='block' withCopy style={{ flexGrow: 1 }}>
-                    {
-                      `<Button${variant !== 'primary' ? ` variant="${variant}"` : ''}${icon === 'start' ? ' iconStart={<FaArrowLeft />}': icon === 'end' ? ' iconEnd={<FaArrowRight />}': ''}>
-  ${value}
-</Button>`
-                    }
-                  </Code>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Card>
-      </div>
+      <ComponentPreview
+        importCode={`import { Button } from 'react-retro'`}
+        exampleCode={codeValue}
+        component={
+          <Button style={{ marginBottom: '26px' }} variant={variant as any} iconStart={icon === 'start' ? <FaArrowLeft /> : ''} iconEnd={icon === 'end' ? <FaArrowRight /> : ''}>
+            {value}
+          </Button>
+        }
+        controls={
+          <>
+            <TextField
+              label="Button Text"
+              placeholder="Enter text here..."
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+              variant='contained'
+            />
+            <Select
+              label="Variant"
+              value={variant}
+              onChange={(e) => setVariant(e)}
+              options={[
+                { label: 'Primary', value: 'primary' },
+                { label: 'Secondary', value: 'secondary' },
+                { label: 'Success', value: 'success' },
+                { label: 'Warning', value: 'warning' },
+                { label: 'Error', value: 'error' },
+              ]}
+            />
+            <RadioGroup value={icon} onChange={(value) => setIcon(value)} options={[{ label: 'None', value: '' }, { label: 'Icon Start', value: 'start' }, { label: 'Icon End', value: 'end' }]} name={''} />
+          </>
+        }
+      />
     </div>
   )
 }

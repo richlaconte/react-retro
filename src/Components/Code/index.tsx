@@ -7,17 +7,25 @@ interface CodeProps {
   children: string; // The code snippet
   variant?: 'inline' | 'block'; // Variant for inline or block code
   withCopy?: boolean; // Option to include a copy button
+  maxHeight?: string;
   style?: React.CSSProperties
 }
 
-const Code: React.FC<CodeProps> = ({ children, variant = 'inline', withCopy = false, style }) => {
+const Code: React.FC<CodeProps> = ({ children, variant = 'inline', withCopy = false, maxHeight, style }) => {
   const copyToClipboard = () => {
     navigator.clipboard.writeText(children);
   };
 
   return (
-    <div className={`code-container ${variant}`} style={{...style}}>
-      <code>{children}</code>
+    <div className={`code-container ${variant}`} style={{ padding: maxHeight ? '0px' : '8px', paddingLeft: '8px', ...style}}>
+      {
+        maxHeight ?
+        <div style={{ maxHeight: maxHeight, overflow: 'auto', width: '100%' }}>
+          <code>{children}</code>
+        </div>
+        :
+        <code>{children}</code>
+      }
       {withCopy && variant ==='block' && (
         <IconButton className="copy-button" variant="secondary" ariaLabel="Copy" square size="small" onClick={copyToClipboard}>
           <FaClipboard />

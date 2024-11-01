@@ -16,6 +16,7 @@
   height: 8px;
   background-color: #ECECEC;
   border-radius: 4px;
+  border: 2px solid #333333;
   position: relative;
   cursor: pointer;
   box-shadow: 2px 2px 0 #333333;
