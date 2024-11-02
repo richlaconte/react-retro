@@ -1,0 +1,37 @@
+{
+  "name": "react-retro",
+  "version": "1.0.1",
+  "description": "A retro-inspired component library for React.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/richlaconte/react-retro.git"
+  },
+  "keywords": [
+    "react",
+    "component-library",
+    "retro",
+    "UI",
+    "design-system"
+  ],
+  "author": "Richard LaConte",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.0"
+  },
+  "files": [
+    "*.js",
+    "*.d.ts",
+    "*.css",
+    "components"
+  ]
+}

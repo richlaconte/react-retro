@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Slider from './Slider';
+import Slider from '.';
 
 const SliderPreview = () => {
   const [value, setValue] = useState(50);

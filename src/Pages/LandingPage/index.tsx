@@ -14,7 +14,7 @@ import Switch from '../../Components/Switch';
 import IconButton from '../../Components/IconButton';
 
 import boston from '../../assets/boston.jpg'
-import Slider from '../../Components/Slider/Slider';
+import Slider from '../../Components/Slider';
 import Select from '../../Components/Select';
 import TextField from '../../Components/TextField';
 

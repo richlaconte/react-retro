@@ -1,6 +1,7 @@
 import { FC } from 'react'
-import Card from '../Components/Card'
-import Code from '../Components/Code'
+import Card from '../Card'
+import Code from '../Code'
+
 
 const ComponentPreview: FC<{
   importCode: string

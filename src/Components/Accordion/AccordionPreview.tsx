@@ -1,5 +1,5 @@
 import Accordion from '.'
-import ComponentPreview from '../../Utils/ComponentPreview'
+import ComponentPreview from '../ComponentPreview/ComponentPreview'
 import AccordionItem from '../AccordionItem'
 
 const AccordionPreview = () => {

@@ -5,7 +5,7 @@ import TextField from '../TextField'
 import Select from '../Select'
 import RadioGroup from '../RadioGroup'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
-import ComponentPreview from '../../Utils/ComponentPreview'
+import ComponentPreview from '../ComponentPreview/ComponentPreview'
 
 const ButtonPreview = () => {
   const [isModalOpen, setModalOpen] = React.useState(false);
