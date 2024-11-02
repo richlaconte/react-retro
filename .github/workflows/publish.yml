@@ -25,7 +25,12 @@ jobs:
       - name: Build Components
         run: npm run build:components
 
+      - name: Install Dependencies in Components Directory
+        working-directory: ./src/components
+        run: npm install
+
       - name: Publish to NPM
+        working-directory: ./src/components
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish components --access public
+        run: npm publish --access public
