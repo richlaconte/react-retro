@@ -3,7 +3,7 @@ name: Publish to NPM
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   publish:
@@ -25,7 +25,34 @@ jobs:
       - name: Build Components
         run: npm run build:components
 
+      - name: Check if Version Changed
+        id: version_check
+        run: |
+          git fetch --tags
+          PREVIOUS_VERSION=$(git describe --abbrev=0 --tags 2>/dev/null || echo "v0.0.0")
+          CURRENT_VERSION=$(jq -r '.version' components/package.json)
+          echo "Previous version: $PREVIOUS_VERSION"
+          echo "Current version: $CURRENT_VERSION"
+
+          # Remove leading 'v' if present
+          PREVIOUS_VERSION_NUMBER=${PREVIOUS_VERSION#v}
+
+          if [ "$PREVIOUS_VERSION_NUMBER" != "$CURRENT_VERSION" ]; then
+            echo "::set-output name=version_changed::true"
+          else
+            echo "::set-output name=version_changed::false"
+          fi
+
       - name: Publish to NPM
+        if: steps.version_check.outputs.version_changed == 'true'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish components --access public
+
+      - name: Create Git Tag
+        if: steps.version_check.outputs.version_changed == 'true'
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "github-actions@github.com"
+          git tag "v$(jq -r '.version' components/package.json)"
+          git push origin --tags
