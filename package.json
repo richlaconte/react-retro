@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "build:components": "cd src && cd components && npm run build"
+    "build:components": "cd src && cd Components && npm run build"
   },
   "dependencies": {
     "react": "^18.3.1",
