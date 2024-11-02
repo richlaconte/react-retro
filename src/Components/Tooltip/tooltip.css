@@ -1,0 +1,66 @@
+/* Tooltip Wrapper */
+.tooltip-wrapper {
+  display: inline-block;
+}
+
+/* Tooltip Box Styling */
+.tooltip-box {
+  position: absolute;
+  padding: 10px;
+  background-color: #FFD966; /* Warm Yellow background */
+  color: #333333; /* Dark grey text */
+  border: 2px solid #333333;
+  border-radius: 8px; /* Rounded corners for a retro feel */
+  box-shadow: 4px 4px 0 #333333; /* Sharp shadow */
+  white-space: nowrap;
+  z-index: 1000;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  opacity: 0.9; /* Semi-transparent for readability */
+}
+
+.tooltip-box.unstyled {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Tooltip Positioning */
+.tooltip-box.top {
+  transform: translate(-50%, -100%);
+  bottom: 100%;
+  left: 50%;
+  margin-bottom: 8px;
+}
+
+.tooltip-box.bottom {
+  transform: translate(-50%, 0);
+  top: 100%;
+  left: 50%;
+  margin-top: 8px;
+}
+
+.tooltip-box.left {
+  transform: translate(-100%, -50%);
+  right: 100%;
+  top: 50%;
+  margin-right: 8px;
+}
+
+.tooltip-box.right {
+  transform: translate(0, -50%);
+  left: 100%;
+  top: 50%;
+  margin-left: 8px;
+}
+
+/* Tooltip Styles When Following the Mouse */
+.tooltip-box.followMouse {
+  transform: none;
+  margin: 0; /* Remove margin to position directly based on cursor */
+  position: absolute;
+}
+
+/* Tooltip Arrow (Optional) */
+/* Feel free to add arrow styling if desired for a retro touch */

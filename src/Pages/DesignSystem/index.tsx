@@ -22,6 +22,7 @@ const index = () => {
       <ListItem title="Badge" onClick={() => navigate('/design/badge')} selected={pathname === '/design/badge'} />
       <ListItem title="Button" onClick={() => navigate('/design/button')} selected={pathname === '/design/button'} />
       <ListItem title="Card" onClick={() => navigate('/design/card')} selected={pathname === '/design/card'} />
+      <ListItem title="Carousel" onClick={() => navigate('/design/carousel')} selected={pathname === '/design/carousel'} />
       <ListItem title="Checkbox" onClick={() => navigate('/design/checkbox')} selected={pathname === '/design/checkbox'} />
       <ListItem title="Chip" onClick={() => navigate('/design/chip')} selected={pathname === '/design/chip'} />
       <ListItem title="Code" onClick={() => navigate('/design/code')} selected={pathname === '/design/code'} />
@@ -40,6 +41,7 @@ const index = () => {
       <ListItem title="Stepper" onClick={() => navigate('/design/stepper')} selected={pathname === '/design/stepper'}/>
       <ListItem title="Tabs" onClick={() => navigate('/design/tabs')} selected={pathname === '/design/tabs'}/>
       <ListItem title="Text Field" onClick={() => navigate('/design/textfield')} selected={pathname === '/design/textfield'}/>
+      <ListItem title="Tooltip" onClick={() => navigate('/design/tooltip')} selected={pathname === '/design/tooltip'}/>
       <ListItem title="Toggle Button" onClick={() => navigate('/design/togglebutton')} selected={pathname === '/design/togglebutton'} />
     </List>
   );

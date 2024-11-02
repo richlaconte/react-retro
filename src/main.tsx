@@ -35,6 +35,8 @@ import RatingPreview from './Components/Rating/RatingPreview.tsx'
 import StepperPreview from './Components/Stepper/StepperPreview.tsx'
 import TabsPreview from './Components/Tabs/TabsPreview.tsx'
 import RadioGroupPreview from './Components/RadioGroup/RadioGroupPreview.tsx'
+import CarouselPreview from './Components/Carousel/CarouselPreview.tsx'
+import TooltipPreview from './Components/Tooltip/TooltipPreview.tsx'
 
 const router = createBrowserRouter([
   {
@@ -77,6 +79,10 @@ const router = createBrowserRouter([
         path: "/design/card",
         element: <CardPreview />,
       },
+      {
+        path: "/design/carousel",
+        element: <CarouselPreview />,
+      },  
       {
         path: "/design/checkbox",
         element: <CheckBoxPreview />,
@@ -152,6 +158,10 @@ const router = createBrowserRouter([
       {
         path: "/design/togglebutton",
         element: <ToggleButtonPreview />,
+      },
+      {
+        path: "/design/tooltip",
+        element: <TooltipPreview />,
       }
     ]
   }

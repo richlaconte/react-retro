@@ -1,0 +1,116 @@
+/* Carousel Container Styles */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 300px; /* Adjust height based on use case */
+  font-family: 'Nunito', sans-serif;
+  border: 2px solid #333333;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 #333333; /* Sharp shadow for retro look */
+}
+
+.carousel-container.vertical {
+  height: 500px; /* Set a taller height for vertical variant */
+}
+
+/* Carousel Wrapper */
+.carousel-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Carousel Content */
+.carousel-content {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-container.vertical .carousel-content {
+  flex-direction: column;
+}
+
+/* Carousel Item */
+.carousel-item {
+  min-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Carousel Navigation Buttons */
+.carousel-button {
+  position: absolute;
+  top: calc(50% - 24px);
+  transition: transform 0.1s ease-in-out;
+}
+
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
+}
+
+/* Carousel Dots */
+.carousel-dots {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background-color: #ECECEC; /* Cool Grey */
+  border-radius: 50%;
+  border: 2px solid #333333;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.dot.active {
+  background-color: #98D19F; /* Pastel Green for active dot */
+}
+
+.carousel-container.vertical .carousel-content {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-container.vertical .carousel-item {
+  min-height: 100%;
+}
+
+.carousel-container.vertical .carousel-button {
+  transform: translateX(-50%);
+  top: auto;
+  left: 50%;
+}
+
+.carousel-container.vertical .prev-button {
+  top: 10px;
+  left: 50%;
+}
+
+.carousel-container.vertical .next-button {
+  bottom: 10px;
+  right: unset;
+}
+
+.carousel-container.vertical .carousel-dots {
+  bottom: unset;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  width: unset;
+  flex-direction: column;
+}
