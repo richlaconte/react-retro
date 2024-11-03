@@ -37,7 +37,7 @@ const LandingPage: React.FC = () => {
       <section className="hero-section">
         <img src={reactRetroLogo} alt="RetroUI Logo" className="logo" />
         <p className="subtitle">
-          Because life's too short to keep using MUI.
+          Because life's too short to use MUI again.
         </p>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px' }}>
           <Button variant="primary" onClick={() => navigate('/design')} iconEnd={<FaArrowRight />}>
