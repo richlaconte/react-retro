@@ -17,6 +17,7 @@ import boston from '../../assets/boston.jpg'
 import Slider from '../../Components/Slider';
 import Select from '../../Components/Select';
 import TextField from '../../Components/TextField';
+import Carousel from '../../Components/Carousel';
 
 const LandingPage: React.FC = () => {
   const [showAlert, setShowAlert] = useState(true);
@@ -96,7 +97,7 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
       <section className='bg-secondary' style={{ paddingBottom: '48px' }}>
-        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', justifyContent: 'center' }}>
+        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', justifyContent: 'space-evenly', alignItems: 'center' }}>
           <div>
             <Card>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', width: '320px' }}>
@@ -152,48 +153,60 @@ const LandingPage: React.FC = () => {
               </div>
             </Card>
           </div>
-          <div style={{ flexGrow: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Card style={{ width: '400px', padding: '12px', height: '140px', backgroundColor: 'white' }}>
-              <div style={{ display: 'flex', gap: '12px', height: '100%' }}>
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
-                  {
-                    loading ?
-                    <Skeleton width={140} height={140} variant="rectangular" /> :
-                    <img src={boston} style={{ width: '140px', borderRadius: '8px' }} />
-                  }
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flexGrow:1 }}>
-                  <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <Carousel orientation="vertical" style={{ width: '600px' }} buttonColor={buttonColor as any}>
+            <div style={{ backgroundColor: '#FFD966', height: '100%', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Card style={{ width: '400px', padding: '12px', height: '140px', backgroundColor: 'white' }}>
+                <div style={{ display: 'flex', gap: '12px', height: '100%' }}>
+                  <div style={{ display: 'flex', justifyContent: 'center' }}>
                     {
                       loading ?
-                      <Skeleton width={120} height={24} variant="rectangular" /> :
-                      <p style={{ fontWeight: 'bold' }}>{artistName}</p>
-                    }
-                    {
-                      loading ?
-                      <Skeleton width={120} height={24} variant="rectangular" /> :
-                      <p>{songName}</p>
+                      <Skeleton width={140} height={140} variant="rectangular" /> :
+                      <img src={boston} style={{ width: '140px', borderRadius: '8px' }} />
                     }
                   </div>
-                  <div>
-                    <Progress variant="linear" mode="determinate" color={play ? progressColor as any : 'secondary'} size='large' value={loading ? 0 : progress} style={{ margin: '0' }} />
-                  </div>
-                  <div style={{ display: 'flex', gap: '8px', justifyContent: 'center' }}>
-                    <IconButton variant={buttonColor as any} ariaLabel='info' disabled={loading}>
-                      <FaArrowLeft />
-                    </IconButton>
-                    <IconButton variant={buttonColor as any} ariaLabel='info' onClick={() => setPlay(!play)} disabled={loading}>
+                  <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flexGrow:1 }}>
+                    <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                       {
-                        play ? <FaPause /> : <FaPlay />
+                        loading ?
+                        <Skeleton width={120} height={24} variant="rectangular" /> :
+                        <p style={{ fontWeight: 'bold' }}>{artistName}</p>
                       }
-                    </IconButton>
-                    <IconButton variant={buttonColor as any} ariaLabel='info' disabled={loading}>
-                      <FaArrowRight />
-                    </IconButton>
+                      {
+                        loading ?
+                        <Skeleton width={120} height={24} variant="rectangular" /> :
+                        <p>{songName}</p>
+                      }
+                    </div>
+                    <div>
+                      <Progress variant="linear" mode="determinate" color={play ? progressColor as any : 'secondary'} size='large' value={loading ? 0 : progress} style={{ margin: '0' }} />
+                    </div>
+                    <div style={{ display: 'flex', gap: '8px', justifyContent: 'center' }}>
+                      <IconButton variant={buttonColor as any} ariaLabel='info' disabled={loading}>
+                        <FaArrowLeft />
+                      </IconButton>
+                      <IconButton variant={buttonColor as any} ariaLabel='info' onClick={() => setPlay(!play)} disabled={loading}>
+                        {
+                          play ? <FaPause /> : <FaPlay />
+                        }
+                      </IconButton>
+                      <IconButton variant={buttonColor as any} ariaLabel='info' disabled={loading}>
+                        <FaArrowRight />
+                      </IconButton>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
+            </div>
+            <div style={{ backgroundColor: '#A2D8FF', height: '100%', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Card>
+                Test
+              </Card>
+            </div>
+            <div style={{ backgroundColor: '#98D19F', height: '100%', width: '100%' }}>
+              Slide 3 Content
+            </div>
+          </Carousel>
           </div>
         </div>
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '24px' }}>
