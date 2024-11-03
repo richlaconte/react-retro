@@ -1,6 +1,6 @@
 {
   "name": "react-retro",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A retro-inspired component library for React.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -34,6 +34,7 @@
     "*.js",
     "*.d.ts",
     "*.css",
-    "Components"
+    "Components",
+    "dist/**/*.css"
   ]
 }

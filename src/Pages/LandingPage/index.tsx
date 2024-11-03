@@ -56,7 +56,7 @@ const LandingPage: React.FC = () => {
         </Alert>
       }
         <div style={{ display: 'flex', marginTop: '22px', overflow: 'auto', paddingBottom: '10px' }}>
-          <div style={{ display: 'flex', gap: '16px', paddingRight: '8px', paddingLeft: '4px', paddingTop: '4px' }}>
+          <div style={{ display: 'flex', gap: '16px', paddingRight: '8px', paddingLeft: '4px', paddingTop: '4px', margin: 'auto' }}>
             <Card style={{ width: '250px', padding: '0px', backgroundColor: 'white' }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px'}}>
                 <Progress variant="circular" mode="determinate" color='success' size='large' value={75} showValue />
