@@ -1,6 +1,6 @@
 {
   "name": "react-retro",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A retro-inspired component library for React.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -23,7 +23,8 @@
   "license": "MIT",
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0"
+    "react-dom": "^17.0.0 || ^18.0.0",
+    "react-icons": "^5.3.0"
   },
   "devDependencies": {
     "typescript": "^4.0.0"

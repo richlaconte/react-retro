@@ -26,7 +26,7 @@ jobs:
         run: npm run build:components
 
       - name: Install Dependencies in Components Directory
-        working-directory: src/Components
+        working-directory: ./src/Components
         run: npm install
 
       - name: Publish to NPM
