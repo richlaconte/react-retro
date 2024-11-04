@@ -2,7 +2,7 @@ import { FC } from 'react'
 import Card from '../Card'
 import Code from '../Code'
 
-import './ComponentPreview.css'
+import './componentPreview.css'
 
 const ComponentPreview: FC<{
   importCode: string
