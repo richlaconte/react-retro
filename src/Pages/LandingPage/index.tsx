@@ -83,15 +83,6 @@ const LandingPage: React.FC = () => {
           <div style={{ display: 'flex', gap: '16px', paddingRight: '8px', paddingLeft: '4px', paddingTop: '4px', margin: 'auto' }}>
             <Card style={{ width: '250px', padding: '0px', backgroundColor: 'white' }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', padding: '12px'}}>
-                <Progress variant="circular" mode="determinate" color='success' size='large' value={75} showValue />
-                <div style={{ flexGrow: 1, textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <p>Page views</p>
-                  <h3>432,391</h3>
-                </div>
-              </div>
-            </Card>
-            <Card style={{ width: '250px', padding: '0px', backgroundColor: 'white' }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', padding: '12px'}}>
                 <Progress variant="circular" mode="determinate" color='success' size='large' value={75} showValue valueType='positive' />
                 <div style={{ flexGrow: 1, textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   <p>Page views</p>
@@ -101,19 +92,28 @@ const LandingPage: React.FC = () => {
             </Card>
             <Card style={{ width: '250px', padding: '0px', backgroundColor: 'white' }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', padding: '12px'}}>
-                <Progress variant="circular" mode="determinate" color='success' size='large' value={75} showValue valueType='positive' />
+                <Progress variant="circular" mode="determinate" color='success' size='large' value={60} showValue />
                 <div style={{ flexGrow: 1, textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <p>Page views</p>
-                  <h3>432,391</h3>
+                  <p>Download goal</p>
+                  <h3>1,329</h3>
                 </div>
               </div>
             </Card>
             <Card style={{ width: '250px', padding: '0px', backgroundColor: 'white' }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', padding: '12px'}}>
-                <Progress variant="circular" mode="determinate" color='success' size='large' value={75} showValue />
+                <Progress variant="circular" mode="determinate" color='success' size='large' value={32} showValue valueType='negative' />
                 <div style={{ flexGrow: 1, textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <p>Page views</p>
-                  <h3>432,391</h3>
+                  <p>Boredom</p>
+                  <h3>32%</h3>
+                </div>
+              </div>
+            </Card>
+            <Card style={{ width: '250px', padding: '0px', backgroundColor: 'white' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', padding: '12px'}}>
+                <Progress variant="circular" mode="determinate" color='success' size='large' value={100} showValue />
+                <div style={{ flexGrow: 1, textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <p>Fun</p>
+                  <h3>100%</h3>
                 </div>
               </div>
             </Card>
