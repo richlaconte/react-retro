@@ -8,7 +8,7 @@ interface CodeProps {
   variant?: 'inline' | 'block'; // Variant for inline or block code
   withCopy?: boolean; // Option to include a copy button
   maxHeight?: string;
-  style?: React.CSSProperties
+  style?: React.CSSProperties;
 }
 
 const Code: React.FC<CodeProps> = ({ children, variant = 'inline', withCopy = false, maxHeight, style }) => {
@@ -21,10 +21,10 @@ const Code: React.FC<CodeProps> = ({ children, variant = 'inline', withCopy = fa
       {
         maxHeight ?
         <div style={{ maxHeight: maxHeight, overflow: 'auto', width: '100%' }}>
-          <code>{children}</code>
+          <code style={{ overflow: 'auto' }}>{children}</code>
         </div>
         :
-        <code>{children}</code>
+        <code style={{ overflow: 'auto' }}>{children}</code>
       }
       {withCopy && variant ==='block' && (
         <IconButton className="copy-button" variant="secondary" ariaLabel="Copy" square size="small" onClick={copyToClipboard}>

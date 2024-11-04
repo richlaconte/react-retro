@@ -37,6 +37,7 @@ import TabsPreview from './Components/Tabs/TabsPreview.tsx'
 import RadioGroupPreview from './Components/RadioGroup/RadioGroupPreview.tsx'
 import CarouselPreview from './Components/Carousel/CarouselPreview.tsx'
 import TooltipPreview from './Components/Tooltip/TooltipPreview.tsx'
+import AvatarGroupPreview from './Components/AvatarGroup/AvatarGroupPreview.tsx'
 
 const router = createBrowserRouter([
   {
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
       {
         path: "/design/avatar",
         element: <AvatarPreview />,
+      },
+      {
+        path: "/design/avatargroup",
+        element: <AvatarGroupPreview />,
       },
       {
         path: "/design/badge",

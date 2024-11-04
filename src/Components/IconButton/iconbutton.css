@@ -62,10 +62,6 @@
   transform: translate(-0.5px, -0.5px);
 }
 
-.icon-button.disabled:hover {
-  transform: none;
-}
-
 .icon-button:active {
   box-shadow: inset 2px 2px 0 #333333;
   transform: translate(1px, 1px);
@@ -168,4 +164,14 @@
 .icon-button.no-outline:hover {
   box-shadow: none;
   background-color: transparent;
+}
+
+.icon-button.disabled:hover {
+  transform: none;
+  box-shadow: none !important;
+}
+
+.icon-button.disabled:active {
+  transform: none !important;
+  box-shadow: none !important;
 }

@@ -1,0 +1,22 @@
+.avatar-group {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-group-overlap .avatar-group-item {
+  margin-left: -8px;
+}
+
+.avatar-group-item {
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 2px 2px 0 #333333;
+}
+
+.avatar-group-item:first-child {
+  margin-left: 0;
+}
+
+.avatar-group-item:last-child {
+  margin-right: 0;
+}

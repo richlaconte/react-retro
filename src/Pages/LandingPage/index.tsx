@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './LandingPage.css';
 import { FaGithub, FaArrowRight, FaPlay, FaArrowLeft, FaPause } from 'react-icons/fa';
@@ -14,10 +14,17 @@ import Switch from '../../Components/Switch';
 import IconButton from '../../Components/IconButton';
 
 import boston from '../../assets/boston.jpg'
+import mountains from '../../assets/mountains.webp'
+
 import Slider from '../../Components/Slider';
 import Select from '../../Components/Select';
 import TextField from '../../Components/TextField';
 import Carousel from '../../Components/Carousel';
+import Chip from '../../Components/Chip'
+import Modal from '../../Components/Modal';
+import { FaArrowUp, FaInfo } from 'react-icons/fa6';
+import AvatarGroup from '../../Components/AvatarGroup';
+import Avatar from '../../Components/Avatar';
 
 const LandingPage: React.FC = () => {
   const [showAlert, setShowAlert] = useState(true);
@@ -29,6 +36,23 @@ const LandingPage: React.FC = () => {
 
   const [songName, setSongName] = useState('Peace of mind');
   const [artistName, setArtistName] = useState('Boston');
+
+  const [message, setMessage] = useState('');
+  const [messages, setMessages] = useState<string[]>([]);
+
+  const sendMessage = () => {
+    setMessages([...messages, message]);
+    setMessage('');
+  }
+
+  useEffect(() => {
+    const messagesContainer = document.getElementById('messages');
+    if (messagesContainer) {
+      messagesContainer.scrollTop = messagesContainer.scrollHeight + 100;
+    }
+  }, [messages]);
+
+  const [artistModalOpen, setArtistModalOpen] = useState(false);
 
   const navigate = useNavigate();
   return (
@@ -157,6 +181,9 @@ const LandingPage: React.FC = () => {
           <Carousel orientation="vertical" style={{ width: '600px' }} buttonColor={buttonColor as any}>
             <div style={{ backgroundColor: '#FFD966', height: '100%', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Card style={{ width: '400px', padding: '12px', height: '140px', backgroundColor: 'white' }}>
+                <IconButton ariaLabel='info' size='small' variant={buttonColor as any} style={{ position: 'absolute', right: '10px', top: '10px' }} onClick={() => setArtistModalOpen(true)} disabled={loading}>
+                  <FaInfo />
+                </IconButton>
                 <div style={{ display: 'flex', gap: '12px', height: '100%' }}>
                   <div style={{ display: 'flex', justifyContent: 'center' }}>
                     {
@@ -199,12 +226,104 @@ const LandingPage: React.FC = () => {
               </Card>
             </div>
             <div style={{ backgroundColor: '#A2D8FF', height: '100%', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Card>
-                Test
+              <Card style={{ padding: '0px', overflow: 'hidden', width: '300px' }}>
+                <div style={{ overflow: 'hidden', height: '100px' }}>
+                  <img src={mountains} width='300' style={{ marginTop: '-90px' }} />
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingLeft: '8px', paddingRight: '8px', paddingTop: '4px', paddingBottom: '4px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <h3 style={{ margin: '0' }}>Project UI</h3>
+                    <Chip label='Active' size='small' variant='success' flat />
+                  </div>
+                  <div>
+                    <Progress variant="circular" mode="determinate" color='success' size='small' value={75} showValue />
+                  </div>
+                </div>
+                <div style={{ padding: '8px' }}>
+                  <p>
+                    Tired of their projects looking like everything else they see, the team is searching for something new.
+                  </p>
+                </div>
+                <div style={{ padding: '8px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <AvatarGroup
+                    size='small'
+                    max={3}
+                  >
+                    <Avatar
+                      name="Johann Sebastian Bach"
+                      src="https://cdn.britannica.com/61/114461-050-E9206DB5/Johann-Sebastian-Bach-oil-canvas-Elias-Gottlieb-1746.jpg?w=400&h=300&c=crop"
+                      size='small'
+                    />
+                    <Avatar
+                      name="Wolfgang Amadeus Mozart"
+                      src="https://theclassicreview.com/wp-content/uploads/2018/08/Mozart-Beginners-Guide-2024-1200-630.webp"
+                      size='small'
+                    />
+                    <Avatar
+                      name="Weird Al Yankovic"
+                      src="https://cdn.houstonpublicmedia.org/wp-content/uploads/2019/06/13152325/Weird_Al_Yankovic-1200x800.jpg"
+                      size='small'
+                    />
+                    <Avatar
+                      name="Antonio Vivaldi"
+                      src="https://www.kennedy-center.org/globalassets/education/resources-for-educators/classroom-resources/artsedge/artists/vivaldi-antonio.jpg"
+                      size='small'
+                    />
+                  </AvatarGroup>
+                  <Button variant={buttonColor as any} onClick={() => navigate('/design')}>Details</Button>
+                </div>
               </Card>
             </div>
-            <div style={{ backgroundColor: '#98D19F', height: '100%', width: '100%' }}>
-              Slide 3 Content
+            <div style={{ backgroundColor: '#98D19F', height: '100%', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Card style={{ padding: '0px', overflow: 'hidden', width: '300px' }}>
+                <div style={{ display: 'flex', padding: '8px', gap: '12px', borderBottom: '2px solid black' }}>
+                  <Avatar
+                    name="Johann Sebastian Bach"
+                    src="https://cdn.britannica.com/61/114461-050-E9206DB5/Johann-Sebastian-Bach-oil-canvas-Elias-Gottlieb-1746.jpg?w=400&h=300&c=crop"
+                    size='small'
+                  />
+                  <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <h3 style={{ margin: '0' }}>Jojo Sebastian</h3>
+                    <p style={{ margin: '0', fontSize: '16px', marginTop: '-4px' }}>Active ~270yrs ago</p>
+                  </div>
+                </div>
+                <div style={{ padding: '8px', height: '200px', overflow: 'auto' }} id="messages">
+                  <Card flat style={{ padding: '6px', marginLeft: '80px' }} bgColor='primary'>
+                    Hey Jojo, what's your favorite movie line?
+                  </Card>
+                  <div style={{ display: 'flex', gap: '12px', marginTop: '8px', alignItems: 'center' }}>
+                    <Avatar
+                      name="Johann Sebastian Bach"
+                      src="https://cdn.britannica.com/61/114461-050-E9206DB5/Johann-Sebastian-Bach-oil-canvas-Elias-Gottlieb-1746.jpg?w=400&h=300&c=crop"
+                      size='small'
+                    />
+                    <Card flat style={{ padding: '6px', marginRight: '40px' }}>
+                      I'll be bach.
+                    </Card>
+                  </div>
+                  {
+                    messages.map((msg, i) => 
+                      <Card flat style={{ padding: '6px', marginLeft: '80px', marginTop: '8px' }} bgColor='primary'>
+                        {msg}
+                      </Card>
+                    )
+                  }
+                </div>
+                <div style={{ padding: '8px', display: 'flex', alignItems: 'center', borderTop: '2px solid black' }}>
+                  <TextField
+                    variant="contained"
+                    style={{ flexGrow: 1 }}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') sendMessage();
+                    }}
+                  />
+                  <IconButton square ariaLabel='Send' size='small' onClick={sendMessage}>
+                    <FaArrowUp />
+                  </IconButton>
+                </div>
+              </Card>
             </div>
           </Carousel>
           </div>
@@ -239,6 +358,22 @@ const LandingPage: React.FC = () => {
           </div>
         </div>
       </footer>
+      <Modal 
+        isOpen={artistModalOpen} 
+        onClose={() => setArtistModalOpen(false)} 
+        title="Boston info" 
+        footer={
+          <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+            <Button variant="secondary" onClick={() => setArtistModalOpen(false)}>Close</Button>
+            <Button variant="primary" onClick={() => window.open('https://en.wikipedia.org/wiki/Boston_(band)', '_blank')}>Read More</Button>
+          </div>
+        }
+      >
+        <div>
+          <p>Boston is an American rock band formed in Boston, Massachusetts in 1975. The band's core members include multi-instrumentalist, founder and leader Tom Scholz, who played the majority of instruments on the band's 1976 self-titled debut album, and former lead vocalist Brad Delp, among a number of other musicians who varied from album to album.</p>
+          <a href="https://en.wikipedia.org/wiki/Boston_(band)" target="_blank" rel="noopener noreferrer">Read More</a>
+        </div>
+      </Modal>
     </div>
   );
 };

@@ -8,6 +8,7 @@ interface ChipProps {
   icon?: React.ReactNode;
   onDelete?: () => void;
   disabled?: boolean;
+  flat?: boolean;
 }
 
 const Chip: React.FC<ChipProps> = ({
@@ -17,10 +18,11 @@ const Chip: React.FC<ChipProps> = ({
   icon,
   onDelete,
   disabled = false,
+  flat
 }) => {
   return (
     <div
-      className={`chip ${variant} ${size} ${disabled ? 'disabled' : ''}`}
+      className={`chip ${variant} ${size} ${disabled ? 'disabled' : ''}${flat ? ' flat' : ''}`}
     >
       {icon && <div className="chip-icon">{icon}</div>}
       <span className="chip-label">{label}</span>

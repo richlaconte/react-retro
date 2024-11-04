@@ -15,6 +15,7 @@ interface TextFieldProps {
   disabled?: boolean;
   variant?: 'standard' | 'contained';
   autocomplete?: string;
+  style?: React.CSSProperties;
 }
 
 const TextField: React.FC<TextFieldProps> = ({
@@ -31,6 +32,7 @@ const TextField: React.FC<TextFieldProps> = ({
   disabled = false,
   variant = 'standard',
   autocomplete = 'off',
+  style
 }) => {
   // Generate unique ID for accessibility
   const inputId = label ? `textfield-${label.replace(/\s+/g, '-').toLowerCase()}` : undefined;
@@ -51,7 +53,7 @@ const TextField: React.FC<TextFieldProps> = ({
   };
 
   return (
-    <div className="textfield-container">
+    <div className="textfield-container" style={{ ...style }}>
       {label && (
         <label className={labelClassName} htmlFor={inputId}>
           {label}

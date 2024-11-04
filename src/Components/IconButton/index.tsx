@@ -11,6 +11,7 @@ interface IconButtonProps {
   square?: boolean;
   className?: string;
   noOutline?: boolean;
+  style?: React.CSSProperties
 }
 
 const IconButton: React.FC<IconButtonProps> = ({
@@ -23,6 +24,7 @@ const IconButton: React.FC<IconButtonProps> = ({
   square = false,
   className,
   noOutline,
+  style
 }) => {
   return (
     <button
@@ -30,6 +32,7 @@ const IconButton: React.FC<IconButtonProps> = ({
       onClick={onClick}
       disabled={disabled}
       aria-label={ariaLabel}
+      style={{...style}}
     >
       {children}
     </button>

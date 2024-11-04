@@ -4,27 +4,40 @@ import './avatar.css';
 interface AvatarProps {
   src?: string
   alt?: string
+  name?: string
   initials?: string
   icon?: React.ReactNode
   size?: 'small' | 'medium' | 'large'
   backgroundColor?: string
   textColor?: string
   square?: boolean
+  className?: string
 }
 
 const Avatar: React.FC<AvatarProps> = ({
   src,
   alt = 'Avatar',
+  name,
   initials,
   icon,
   size = 'medium',
   backgroundColor = '#A2D8FF',
   textColor = '#333333',
-  square = false
+  square = false,
+  className
 }) => {
+  if (name) {
+    const nameArray = name.split(' ');
+    if (nameArray.length > 1) {
+      initials = nameArray[0].charAt(0) + nameArray[1].charAt(0);
+    } else {
+      initials = nameArray[0].charAt(0);
+    }
+  }
+
   return (
     <div
-      className={`avatar-container ${square ? 'square' : ''} ${size}`}
+      className={`avatar-container ${square ? 'square' : ''} ${size}` + (className ? ` ${className}` : '')}
       style={{ backgroundColor, color: textColor }}
     >
       {src ? (

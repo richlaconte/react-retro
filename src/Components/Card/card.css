@@ -9,12 +9,45 @@
   transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
+.card.bg-primary {
+  background-color: #A2D8FF;
+}
+
+.card.bg-secondary {
+  background-color: #ECECEC;
+}
+
+.card.bg-success {
+  background-color: #98D19F;
+}
+
+.card.bg-warning {
+  background-color: #FFD966;
+}
+
+.card.bg-error {
+  background-color: #D9534F;
+}
+
+.card.flat {
+  box-shadow: none;
+}
+
 /* Hover Effect */
 .card:hover {
   transform: translate(-1px, -1px);
   box-shadow: 6px 6px 0 #333333;
 }
 
+.card.flat:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.card.disable-hover:hover {
+  box-shadow: 4px 4px 0 #333333;
+  transform: none;
+}
 /* Card Header */
 .card-header {
   font-size: 24px;

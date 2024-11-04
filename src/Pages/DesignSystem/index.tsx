@@ -19,6 +19,7 @@ const index = () => {
       <ListItem title="Alert" onClick={() => navigate('/design/alert')} selected={pathname === '/design/alert'} />
       <ListItem title="Autocomplete" onClick={() => navigate('/design/autocomplete')} selected={pathname === '/design/autocomplete'} />
       <ListItem title="Avatar" onClick={() => navigate('/design/avatar')} selected={pathname === '/design/avatar'} />
+      <ListItem title="Avatar Group" onClick={() => navigate('/design/avatargroup')} selected={pathname === '/design/avatargroup'} />
       <ListItem title="Badge" onClick={() => navigate('/design/badge')} selected={pathname === '/design/badge'} />
       <ListItem title="Button" onClick={() => navigate('/design/button')} selected={pathname === '/design/button'} />
       <ListItem title="Card" onClick={() => navigate('/design/card')} selected={pathname === '/design/card'} />

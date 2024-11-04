@@ -46,7 +46,6 @@
 .carousel-button {
   position: absolute;
   top: calc(50% - 24px);
-  transition: transform 0.1s ease-in-out;
 }
 
 .prev-button {

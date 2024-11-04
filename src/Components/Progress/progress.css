@@ -5,7 +5,6 @@
   align-items: center;
   font-family: 'Nunito', sans-serif;
   color: #333333;
-  margin: 16px;
 }
 
 .progress-label {
@@ -139,7 +138,10 @@
   }
 }
 
-/* Sizes */
+.progress-container.small {
+  margin: 4px;
+}
+
 .progress-container.small .progress-circle,
 .progress-container.small .progress-spinner {
   width: 40px;
@@ -152,7 +154,7 @@
 }
 
 .progress-container.small .progress-value {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .progress-container.large .progress-circle,
