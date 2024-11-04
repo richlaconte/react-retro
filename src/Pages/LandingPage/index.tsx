@@ -63,8 +63,8 @@ const LandingPage: React.FC = () => {
         <p className="subtitle">
           Because life's too short to use MUI again.
         </p>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px' }}>
-          <Button variant="primary" onClick={() => navigate('/design')} iconEnd={<FaArrowRight />}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', flexWrap: 'wrap' }}>
+          <Button variant="success" onClick={() => navigate('/design')} iconEnd={<FaArrowRight />}>
             Get Started
           </Button>
           <Button variant="secondary" iconStart={<FaGithub />} onClick={() => window.open('https://github.com/richlaconte/react-retro', '_blank')}>
@@ -82,36 +82,36 @@ const LandingPage: React.FC = () => {
         <div style={{ display: 'flex', marginTop: '22px', overflow: 'auto', paddingBottom: '10px' }}>
           <div style={{ display: 'flex', gap: '16px', paddingRight: '8px', paddingLeft: '4px', paddingTop: '4px', margin: 'auto' }}>
             <Card style={{ width: '250px', padding: '0px', backgroundColor: 'white' }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px'}}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', padding: '12px'}}>
                 <Progress variant="circular" mode="determinate" color='success' size='large' value={75} showValue />
-                <div style={{ flexGrow: 1, textAlign: 'left' }}>
+                <div style={{ flexGrow: 1, textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   <p>Page views</p>
                   <h3>432,391</h3>
                 </div>
               </div>
             </Card>
             <Card style={{ width: '250px', padding: '0px', backgroundColor: 'white' }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px'}}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', padding: '12px'}}>
                 <Progress variant="circular" mode="determinate" color='success' size='large' value={75} showValue valueType='positive' />
-                <div style={{ flexGrow: 1, textAlign: 'left' }}>
+                <div style={{ flexGrow: 1, textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   <p>Page views</p>
                   <h3>432,391</h3>
                 </div>
               </div>
             </Card>
             <Card style={{ width: '250px', padding: '0px', backgroundColor: 'white' }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px'}}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', padding: '12px'}}>
                 <Progress variant="circular" mode="determinate" color='success' size='large' value={75} showValue valueType='positive' />
-                <div style={{ flexGrow: 1, textAlign: 'left' }}>
+                <div style={{ flexGrow: 1, textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   <p>Page views</p>
                   <h3>432,391</h3>
                 </div>
               </div>
             </Card>
             <Card style={{ width: '250px', padding: '0px', backgroundColor: 'white' }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px'}}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px', padding: '12px'}}>
                 <Progress variant="circular" mode="determinate" color='success' size='large' value={75} showValue />
-                <div style={{ flexGrow: 1, textAlign: 'left' }}>
+                <div style={{ flexGrow: 1, textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   <p>Page views</p>
                   <h3>432,391</h3>
                 </div>
@@ -121,10 +121,10 @@ const LandingPage: React.FC = () => {
         </div>
       </section>
       <section className='bg-secondary' style={{ paddingBottom: '48px' }}>
-        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', justifyContent: 'space-evenly', alignItems: 'center' }}>
+        <div id="carousel-container" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', justifyContent: 'space-evenly', alignItems: 'center' }}>
           <div>
             <Card>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', width: '320px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', width: '320px', maxWidth: '100%' }}>
                 <Switch checked={loading} onChange={() => setLoading(!loading)} style={{ marginRight: '8px'}} label='Show loading state' />
                 <p style={{ marginBottom: '8px' }}>Song progress value</p>
                 <Slider value={progress} onChange={(value) => {
@@ -180,7 +180,7 @@ const LandingPage: React.FC = () => {
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <Carousel orientation="vertical" style={{ width: '600px' }} buttonColor={buttonColor as any}>
             <div style={{ backgroundColor: '#FFD966', height: '100%', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Card style={{ width: '400px', padding: '12px', height: '140px', backgroundColor: 'white' }}>
+              <Card className="scale-down-mobile" style={{ width: '400px', padding: '12px', height: '140px', backgroundColor: 'white' }}>
                 <IconButton ariaLabel='info' size='small' variant={buttonColor as any} style={{ position: 'absolute', right: '10px', top: '10px' }} onClick={() => setArtistModalOpen(true)} disabled={loading}>
                   <FaInfo />
                 </IconButton>
@@ -226,83 +226,113 @@ const LandingPage: React.FC = () => {
               </Card>
             </div>
             <div style={{ backgroundColor: '#A2D8FF', height: '100%', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Card style={{ padding: '0px', overflow: 'hidden', width: '300px' }}>
+              <Card className='scale-down-mobile' style={{ padding: '0px', overflow: 'hidden', width: '300px' }}>
                 <div style={{ overflow: 'hidden', height: '100px' }}>
-                  <img src={mountains} width='300' style={{ marginTop: '-90px' }} />
+                  {
+                    loading ?
+                    <Skeleton width={300} height={100} variant="rectangular" /> :
+                    <img src={mountains} width='300' style={{ marginTop: '-90px' }} />
+                  }
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingLeft: '8px', paddingRight: '8px', paddingTop: '4px', paddingBottom: '4px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                    <h3 style={{ margin: '0' }}>Project UI</h3>
-                    <Chip label='Active' size='small' variant='success' flat />
+                    {
+                      loading ?
+                      <Skeleton width={120} height={24} variant="rectangular" />
+                      :
+                      <h3 style={{ margin: '0' }}>Project UI</h3>
+                    }
+                    {
+                      !loading &&
+                      <Chip label='Active' size='small' variant='success' flat />
+                    }
                   </div>
                   <div>
-                    <Progress variant="circular" mode="determinate" color='success' size='small' value={75} showValue />
+                    <Progress variant="circular" mode={"determinate"} color={progressColor as any} size='small' value={loading ? 0 : progress} showValue />
                   </div>
                 </div>
                 <div style={{ padding: '8px' }}>
-                  <p>
-                    Tired of their projects looking like everything else they see, the team is searching for something new.
-                  </p>
+                  {
+                    loading ?
+                    <Skeleton width={280} height={65} variant="rectangular" /> :
+                    <p>
+                      The team is trying to figure out how to make their projects look like everything else they see.
+                    </p>
+                  }
                 </div>
                 <div style={{ padding: '8px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <AvatarGroup
-                    size='small'
-                    max={3}
-                  >
-                    <Avatar
-                      name="Johann Sebastian Bach"
-                      src="https://cdn.britannica.com/61/114461-050-E9206DB5/Johann-Sebastian-Bach-oil-canvas-Elias-Gottlieb-1746.jpg?w=400&h=300&c=crop"
+                  {
+                    loading ?
+                    <div></div> :
+                    <AvatarGroup
                       size='small'
-                    />
-                    <Avatar
-                      name="Wolfgang Amadeus Mozart"
-                      src="https://theclassicreview.com/wp-content/uploads/2018/08/Mozart-Beginners-Guide-2024-1200-630.webp"
-                      size='small'
-                    />
-                    <Avatar
-                      name="Weird Al Yankovic"
-                      src="https://cdn.houstonpublicmedia.org/wp-content/uploads/2019/06/13152325/Weird_Al_Yankovic-1200x800.jpg"
-                      size='small'
-                    />
-                    <Avatar
-                      name="Antonio Vivaldi"
-                      src="https://www.kennedy-center.org/globalassets/education/resources-for-educators/classroom-resources/artsedge/artists/vivaldi-antonio.jpg"
-                      size='small'
-                    />
-                  </AvatarGroup>
-                  <Button variant={buttonColor as any} onClick={() => navigate('/design')}>Details</Button>
+                      max={3}
+                    >
+                      <Avatar
+                        name="Johann Sebastian Bach"
+                        src="https://cdn.britannica.com/61/114461-050-E9206DB5/Johann-Sebastian-Bach-oil-canvas-Elias-Gottlieb-1746.jpg?w=400&h=300&c=crop"
+                        size='small'
+                      />
+                      <Avatar
+                        name="Wolfgang Amadeus Mozart"
+                        src="https://theclassicreview.com/wp-content/uploads/2018/08/Mozart-Beginners-Guide-2024-1200-630.webp"
+                        size='small'
+                      />
+                      <Avatar
+                        name="Weird Al Yankovic"
+                        src="https://cdn.houstonpublicmedia.org/wp-content/uploads/2019/06/13152325/Weird_Al_Yankovic-1200x800.jpg"
+                        size='small'
+                      />
+                      <Avatar
+                        name="Antonio Vivaldi"
+                        src="https://www.kennedy-center.org/globalassets/education/resources-for-educators/classroom-resources/artsedge/artists/vivaldi-antonio.jpg"
+                        size='small'
+                      />
+                    </AvatarGroup>
+                  }
+                  <Button variant={buttonColor as any} disabled>Details</Button>
                 </div>
               </Card>
             </div>
             <div style={{ backgroundColor: '#98D19F', height: '100%', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Card style={{ padding: '0px', overflow: 'hidden', width: '300px' }}>
-                <div style={{ display: 'flex', padding: '8px', gap: '12px', borderBottom: '2px solid black' }}>
+              <Card className='scale-down-mobile' style={{ padding: '0px', overflow: 'hidden', width: '300px' }}>
+                <div style={{ display: 'flex', padding: '8px', gap: '12px', borderBottom: '2px solid black', backgroundColor: '#A2D8FF' }}>
                   <Avatar
-                    name="Johann Sebastian Bach"
-                    src="https://cdn.britannica.com/61/114461-050-E9206DB5/Johann-Sebastian-Bach-oil-canvas-Elias-Gottlieb-1746.jpg?w=400&h=300&c=crop"
+                    name={loading ? "?" : "Johann Sebastian Bach"}
+                    src={loading ? '' : "https://cdn.britannica.com/61/114461-050-E9206DB5/Johann-Sebastian-Bach-oil-canvas-Elias-Gottlieb-1746.jpg?w=400&h=300&c=crop"}
                     size='small'
                   />
                   <div style={{ display: 'flex', flexDirection: 'column' }}>
-                    <h3 style={{ margin: '0' }}>Jojo Sebastian</h3>
-                    <p style={{ margin: '0', fontSize: '16px', marginTop: '-4px' }}>Active ~270yrs ago</p>
+                    <h3 style={{ margin: '0' }}>{loading ? "-" : "Jojo Sebastian"}</h3>
+                    <p style={{ margin: '0', fontSize: '16px', marginTop: '-4px' }}>{loading ? "-" : "Active ~270yrs ago"}</p>
                   </div>
                 </div>
                 <div style={{ padding: '8px', height: '200px', overflow: 'auto' }} id="messages">
-                  <Card flat style={{ padding: '6px', marginLeft: '80px' }} bgColor='primary'>
-                    Hey Jojo, what's your favorite movie line?
-                  </Card>
-                  <div style={{ display: 'flex', gap: '12px', marginTop: '8px', alignItems: 'center' }}>
-                    <Avatar
-                      name="Johann Sebastian Bach"
-                      src="https://cdn.britannica.com/61/114461-050-E9206DB5/Johann-Sebastian-Bach-oil-canvas-Elias-Gottlieb-1746.jpg?w=400&h=300&c=crop"
-                      size='small'
-                    />
-                    <Card flat style={{ padding: '6px', marginRight: '40px' }}>
-                      I'll be bach.
-                    </Card>
-                  </div>
                   {
-                    messages.map((msg) => 
+                    loading ? 
+                    <>
+                      <Skeleton width={280} height={65} variant="rectangular" />
+                      <Skeleton width={280} height={65} variant="rectangular" />
+                    </>
+                    :
+                    <>
+                      <Card flat style={{ padding: '6px', marginLeft: '80px' }} bgColor='primary'>
+                        Hey Jojo, what's your favorite movie line?
+                      </Card>
+                      <div style={{ display: 'flex', gap: '12px', marginTop: '8px', alignItems: 'center' }}>
+                        <Avatar
+                          name="Johann Sebastian Bach"
+                          src="https://cdn.britannica.com/61/114461-050-E9206DB5/Johann-Sebastian-Bach-oil-canvas-Elias-Gottlieb-1746.jpg?w=400&h=300&c=crop"
+                          size='small'
+                        />
+                        <Card flat style={{ padding: '6px', marginRight: '40px' }}>
+                          I'll be bach.
+                        </Card>
+                      </div>
+                    </>
+                  }
+                  {
+                    !loading && messages.map((msg) => 
                       <Card flat style={{ padding: '6px', marginLeft: '80px', marginTop: '8px' }} bgColor='primary'>
                         {msg}
                       </Card>
@@ -315,11 +345,12 @@ const LandingPage: React.FC = () => {
                     style={{ flexGrow: 1 }}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
+                    disabled={loading}
                     onKeyDown={(e) => {
                       if (e.key === 'Enter') sendMessage();
                     }}
                   />
-                  <IconButton square ariaLabel='Send' size='small' onClick={sendMessage}>
+                  <IconButton square ariaLabel='Send' size='small' onClick={sendMessage} disabled={loading}>
                     <FaArrowUp />
                   </IconButton>
                 </div>
@@ -337,7 +368,7 @@ const LandingPage: React.FC = () => {
         <p>
           Join the community of developers using react-retro to create stunning, retro-inspired applications.
         </p>
-        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
+        <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
           <Button variant="primary" onClick={() => navigate('/design')} iconEnd={<FaArrowRight />}>
             Get Started
           </Button>

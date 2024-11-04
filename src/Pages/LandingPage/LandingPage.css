@@ -40,6 +40,10 @@ section {
   padding: 10px 20px 10px 20px
 }
 
+h3 {
+  margin: 0;
+}
+
 
 .feature h3 {
   font-size: 28px;
@@ -209,8 +213,38 @@ section {
   color: #555555;
 }
 
-/* Responsive Design */
+
+@media (max-width: 1200px) {
+  #carousel-container {
+    flex-direction: column-reverse;
+  }
+
+  #carousel-container > div {
+    width: 100% !important;
+  }
+
+  #carousel-container .carousel-container-parent {
+    width: 100% !important;
+  }
+}
+
 @media (max-width: 768px) {
+  .scale-down-mobile {
+    transform: scale(0.60);
+  }
+
+  .scale-down-mobile:hover {
+    transform: scale(0.60);
+  }
+
+  .scale-down-mobile:active {
+    transform: scale(0.60);
+  }
+
+  .carousel-container.vertical {
+    height: 400px !important;
+  }
+
   .features {
     flex-direction: column;
     align-items: center;

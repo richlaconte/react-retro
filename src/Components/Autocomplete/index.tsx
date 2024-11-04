@@ -92,8 +92,6 @@ const Autocomplete: React.FC<AutocompleteProps> = ({
     }
   };
 
-  console.log(filteredOptions)
-
   return (
     <div
       className={`autocomplete-container ${variant} ${size} ${

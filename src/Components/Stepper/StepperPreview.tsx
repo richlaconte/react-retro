@@ -8,7 +8,6 @@ const StepperPreview = () => {
 
   const handleStepClick = (stepIndex: number) => {
     setActiveStep(stepIndex);
-    console.log('Navigated to:', steps[stepIndex]);
   };
 
   return (

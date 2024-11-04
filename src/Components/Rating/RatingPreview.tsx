@@ -15,7 +15,6 @@ const RatingPreview = () => {
         size="large"
         onChange={(value) => {
           setRating(value);
-          console.log('Rating selected:', value);
         }}
       />
     </div>

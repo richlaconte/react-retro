@@ -6,6 +6,7 @@ import Select from '../Select'
 import RadioGroup from '../RadioGroup'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'
 import ComponentPreview from '../ComponentPreview/ComponentPreview'
+import Switch from '../Switch'
 
 const ButtonPreview = () => {
   const [isModalOpen, setModalOpen] = React.useState(false);
@@ -19,8 +20,9 @@ const ButtonPreview = () => {
   const [variant, setVariant] = React.useState('primary');
   const [value, setValue] = React.useState('Primary');
   const [icon, setIcon] = React.useState('');
+  const [disabled, setDisabled] = React.useState(false);
 
-  const codeValue = `<Button${variant !== 'primary' ? ` variant="${variant}"` : ''}${icon === 'start' ? ' iconStart={<FaArrowLeft />}': icon === 'end' ? ' iconEnd={<FaArrowRight />}': ''}>\n  ${value}\n</Button>`
+  const codeValue = `<Button${variant !== 'primary' ? ` variant="${variant}"` : ''}${icon === 'start' ? ' iconStart={<FaArrowLeft />}': icon === 'end' ? ' iconEnd={<FaArrowRight />}': ''}${disabled ? ' disabled' : ''}>\n  ${value}\n</Button>`
 
   const modalFooter = (
     <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
@@ -77,12 +79,13 @@ const ButtonPreview = () => {
         importCode={`import { Button } from 'react-retro'`}
         exampleCode={codeValue}
         component={
-          <Button style={{ marginBottom: '26px' }} variant={variant as any} iconStart={icon === 'start' ? <FaArrowLeft /> : ''} iconEnd={icon === 'end' ? <FaArrowRight /> : ''}>
+          <Button style={{ marginBottom: '26px' }} variant={variant as any} iconStart={icon === 'start' ? <FaArrowLeft /> : ''} iconEnd={icon === 'end' ? <FaArrowRight /> : ''} disabled={disabled}>
             {value}
           </Button>
         }
         controls={
           <>
+            <Switch label="Disabled" checked={disabled} onChange={(value) => setDisabled(value.target.checked)} />
             <TextField
               label="Button Text"
               placeholder="Enter text here..."

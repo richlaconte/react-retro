@@ -2,6 +2,7 @@ import { FC } from 'react'
 import Card from '../Card'
 import Code from '../Code'
 
+import './ComponentPreview.css'
 
 const ComponentPreview: FC<{
   importCode: string
@@ -24,7 +25,7 @@ const ComponentPreview: FC<{
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
             {component}
           </div>
-          <div style={{ display: 'flex', gap: '16px' }}>
+          <div className="props-and-code-container">
             <div style={{ flexGrow: 1 }}>
               <Card style={{ minWidth: '400px' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -32,9 +33,6 @@ const ComponentPreview: FC<{
                   {controls}
                 </div>
               </Card>
-            </div>
-            <div>
-              
             </div>
             <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div style={{ width: '100%', display: 'flex' }}>

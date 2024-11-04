@@ -1,0 +1,15 @@
+.props-and-code-container {
+  display: flex !important;
+  gap: 16px;
+}
+
+@media (max-width: 1200px) {
+  .props-and-code-container {
+    flex-direction: column-reverse;
+
+  }
+}
+
+@media (max-width: 768px) {
+  
+}

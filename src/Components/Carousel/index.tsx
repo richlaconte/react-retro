@@ -33,7 +33,7 @@ const Carousel: React.FC<CarouselProps> = ({
   };
 
   return (
-    <div style={{ display: 'flex', ...style }}>
+    <div className="carousel-container-parent" style={{ display: 'flex', ...style }}>
       <div className={`carousel-container ${orientation} ${controlsOutside ? 'controls-outside' : ''}`}>
         <div className="carousel-wrapper">
           <div

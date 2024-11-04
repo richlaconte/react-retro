@@ -33,7 +33,6 @@ const Tooltip: React.FC<TooltipProps> = ({
 
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     if (followMouse && tooltipRef.current) {
-      console.log(event)
       setTooltipStyles({
         left: event.clientX,
         top: event.clientY,

@@ -9,6 +9,7 @@ const Button: FC<{
   style?: React.CSSProperties
   iconStart?: React.ReactNode
   iconEnd?: React.ReactNode
+  disabled?: boolean
   children: React.ReactNode 
 }> = ({
   variant = 'primary',
@@ -17,18 +18,19 @@ const Button: FC<{
   style,
   iconStart,
   iconEnd,
+  disabled,
   children
 }) => {
   return (
     <button 
       id={id}
-      className={`button ${variant}-button`}
+      className={`button ${variant}-button${disabled ? ' disabled' : ''}`}
       onClick={onClick}
       style={{...style}}
     >
-      {iconStart && <div className="button-icon-start">{iconStart}</div>}
+      {iconStart && <div className="button-icon">{iconStart}</div>}
       {children}
-      {iconEnd && <div className="button-icon-end">{iconEnd}</div>}
+      {iconEnd && <div className="button-icon">{iconEnd}</div>}
     </button>
   )
 }

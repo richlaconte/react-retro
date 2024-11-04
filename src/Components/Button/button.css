@@ -98,14 +98,26 @@
   left: 2px;
 }
 
-.button-icon-end {
+.button-icon {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.button-icon-end {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.button.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none !important;
+}
+
+.button.disabled:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.button.disabled:active {
+  transform: none !important;
+  box-shadow: none !important;
+  top: 0 !important;
+  left: 0 !important;
 }
