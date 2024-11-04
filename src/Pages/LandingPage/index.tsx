@@ -302,7 +302,7 @@ const LandingPage: React.FC = () => {
                     </Card>
                   </div>
                   {
-                    messages.map((msg, i) => 
+                    messages.map((msg) => 
                       <Card flat style={{ padding: '6px', marginLeft: '80px', marginTop: '8px' }} bgColor='primary'>
                         {msg}
                       </Card>
