@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Carousel from '.';
 import List from '../List';
-import { FaCheckCircle, FaTimesCircle, FaInfoCircle, FaExclamationCircle } from 'react-icons/fa';
+import { FaCheckCircle, FaTimesCircle, FaInfoCircle } from 'react-icons/fa';
 import ListItem from '../ListItem';
 
 const App: React.FC = () => {
