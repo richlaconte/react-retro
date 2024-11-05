@@ -8,6 +8,8 @@ interface CarouselProps {
   buttonColor?: "success" | "primary" | "secondary" | "warning" | "error" | undefined;
   orientation?: 'horizontal' | 'vertical';
   controlsOutside?: boolean;
+  onChange?: (index: number) => void;
+  value?: number;
   style?: React.CSSProperties;
 }
 
@@ -16,17 +18,25 @@ const Carousel: React.FC<CarouselProps> = ({
   buttonColor, 
   orientation = 'horizontal', 
   controlsOutside, 
+  onChange,
+  value,
   style 
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToPrevious = () => {
+    if (onChange && value !== undefined) {
+      return onChange(value - 1);
+    }
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? children.length - 1 : prevIndex - 1
     );
   };
 
   const goToNext = () => {
+    if (onChange && value !== undefined) {
+      return onChange(value + 1);
+    }
     setCurrentIndex((prevIndex) =>
       prevIndex === children.length - 1 ? 0 : prevIndex + 1
     );
@@ -40,8 +50,8 @@ const Carousel: React.FC<CarouselProps> = ({
             className="carousel-content"
             style={{
               transform: orientation === 'horizontal'
-                ? `translateX(-${currentIndex * 100}%)`
-                : `translateY(-${currentIndex * 100}%)`
+                ? `translateX(-${value !== undefined ? (value * 100) : (currentIndex * 100)}%)`
+                : `translateY(-${value !== undefined ? (value * 100) : (currentIndex * 100)}%)`
             }}
           >
             {children.map((child, index) => (
@@ -61,8 +71,13 @@ const Carousel: React.FC<CarouselProps> = ({
           {children.map((_, index) => (
             <div
               key={index}
-              className={`dot ${index === currentIndex ? 'active' : ''}`}
-              onClick={() => setCurrentIndex(index)}
+              className={`dot ${(value !== undefined ? (value === index) : (index === currentIndex)) ? 'active' : ''}`}
+              onClick={() => {
+                if (onChange && value !== undefined) {
+                  return onChange(index);
+                }
+                setCurrentIndex(index)
+              }}
             />
           ))}
         </div>
