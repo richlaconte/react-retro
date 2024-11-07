@@ -3,12 +3,13 @@ import './navbar.css';
 
 interface NavBarProps {
   logo?: React.ReactNode;
+  color?: string;
   children?: React.ReactNode;
 }
 
-const NavBar: React.FC<NavBarProps> = ({ logo, children }) => {
+const NavBar: React.FC<NavBarProps> = ({ logo, color, children }) => {
   return (
-    <header className="navbar">
+    <header className={`navbar ${color ? `bg-${color}` : ''}`}>
       <div className="navbar-logo">{logo}</div>
       <nav className="navbar-menu">{children}</nav>
     </header>

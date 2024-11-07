@@ -1,10 +1,10 @@
-import Button from '../../Components/Button';
 import List from '../../Components/List';
 import ListItem from '../../Components/ListItem';
 import Dashboard from '../../Components/Dashboard';
 import { Outlet, useNavigate, Link, useLocation } from 'react-router-dom';
 
 import logo from '../../assets/reactRetroLogo.png'
+import ComponentSearch from './ComponentSearch';
 
 const index = () => {
   const navigate = useNavigate();
@@ -54,7 +54,7 @@ const index = () => {
       <Link to="/design" className="navbar-item">
         Components
       </Link>
-      <Button variant='secondary' >Sign In</Button>
+      <ComponentSearch disableLabel />
     </>
   );
 
@@ -63,6 +63,7 @@ const index = () => {
       sidebarContent={sidebarContent}
       navbarContent={navbarContent}
       navbarLogo={<img src={logo} />}
+      color='primary'
     >
       <Outlet />
     </Dashboard>

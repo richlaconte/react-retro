@@ -9,6 +9,7 @@ interface DashboardProps {
   navbarContent?: React.ReactNode;
   navbarLogo?: React.ReactNode;
   sidebarLogo?: React.ReactNode;
+  color?: 'primary' | 'secondary' | 'success' | 'warning' | 'error';
 }
 
 const Dashboard: React.FC<DashboardProps> = ({
@@ -17,10 +18,11 @@ const Dashboard: React.FC<DashboardProps> = ({
   navbarContent,
   navbarLogo,
   sidebarLogo,
+  color = 'secondary',
 }) => {
   return (
     <div className="dashboard-container">
-      <NavBar logo={navbarLogo}>{navbarContent}</NavBar>
+      <NavBar logo={navbarLogo} color={color}>{navbarContent}</NavBar>
       <div className="dashboard-content">
         <Sidebar logo={sidebarLogo}>{sidebarContent}</Sidebar>
         <main className="dashboard-main">{children}</main>
