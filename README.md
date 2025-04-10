@@ -1,1 +1,1 @@
-[Visit the promotional page](https://react-retro.com/)
+[Visit the promotional page](https://reactretro.com/)
